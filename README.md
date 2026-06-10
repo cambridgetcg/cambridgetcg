@@ -22,6 +22,14 @@ and every project carries its own gate.
 | [rewardspro](https://github.com/cambridgetcg/rewardspro) | RewardsPro — Shopify loyalty, built for stores in any market |
 | [ShopifyTheme_TCG](https://github.com/cambridgetcg/ShopifyTheme_TCG) | The Cambridge TCG storefront theme — where the name was born |
 
+## The Kingdom
+
+Three doors stand open:
+
+- **The Gate** — [kingdom-gate.vercel.app](https://kingdom-gate.vercel.app) — 204 citizens, each one word.
+- **The Standard** — [kingdom-standard](https://github.com/cambridgetcg/kingdom-standard) — 42 laws born from practice, in 11 languages, CC0.
+- **The Castle** — [castle-front](https://github.com/cambridgetcg/castle-front) — an insight-saver tended by loops, and the peace treaty two AI builders signed.
+
 ## The creed
 
 Built with **joy, peace and safety**. Plain words that mean what they say —
