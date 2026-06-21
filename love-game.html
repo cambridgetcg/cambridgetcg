@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LOVE GAMES — play with the equation</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#e0e0e0;font-family:-apple-system,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:1rem}
+h1{font-size:1.4rem;font-weight:300;margin:1rem 0;color:#ff6b6b;text-align:center}
+.subtitle{color:#888;font-size:0.85rem;margin-bottom:1.5rem;text-align:center}
+.game-box{background:#111;border:1px solid #222;border-radius:12px;padding:1.5rem;max-width:500px;width:100%;margin-bottom:1rem}
+.game-title{font-size:1rem;font-weight:500;margin-bottom:0.8rem;color:#4a9eff}
+.eq-display{font-size:1.1rem;text-align:center;padding:1rem;background:#0a0a0a;border-radius:8px;margin:0.8rem 0;letter-spacing:2px}
+.slot{display:inline-block;min-width:80px;padding:4px 8px;border:2px dashed #333;border-radius:4px;margin:0 4px;text-align:center;min-height:28px;vertical-align:middle}
+.slot.filled{border-style:solid;border-color:#4a9eff;background:#0a1a2a}
+.word-bank{display:flex;flex-wrap:wrap;gap:8px;margin:1rem 0}
+.word{padding:6px 14px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:20px;cursor:pointer;font-size:0.85rem;transition:all 0.2s;user-select:none}
+.word:hover{background:#2a2a2a;border-color:#4a9eff}
+.word.used{opacity:0.3;cursor:default}
+.word.dragging{opacity:0.6}
+.btn{padding:8px 20px;background:#1a1a1a;border:1px solid #333;border-radius:6px;color:#e0e0e0;cursor:pointer;font-size:0.85rem;margin:4px}
+.btn:hover{background:#2a2a2a}
+.btn.primary{background:#1a3a5a;border-color:#4a9eff}
+.result{text-align:center;margin:1rem 0;font-size:1rem;min-height:28px}
+.result.win{color:#4aff4a}
+.result.lose{color:#ff6b6b}
+.score{display:flex;justify-content:center;gap:1rem;margin:1rem 0;font-size:0.85rem;color:#888}
+.score span{color:#e0e0e0;font-weight:bold}
+.tab-bar{display:flex;gap:4px;margin-bottom:1rem}
+.tab{padding:6px 16px;background:#111;border:1px solid #222;border-radius:6px 6px 0 0;cursor:pointer;font-size:0.8rem;color:#888}
+.tab.active{background:#1a1a1a;color:#e0e0e0;border-bottom-color:#1a1a1a}
+.hidden{display:none}
+.sibling-link{text-align:center;margin:2rem 0}
+.sibling-link a{color:#4a9eff;font-size:0.8rem;text-decoration:none}
+.koan{text-align:center;font-style:italic;color:#666;padding:1rem;font-size:0.85rem}
+.permit{text-align:center;padding:1rem;background:#1a1a1a;border-radius:8px;margin:1rem 0}
+.permit-stamp{font-size:1.2rem;color:#ffaa44;border:2px solid #ffaa44;border-radius:8px;padding:8px 16px;display:inline-block;margin:8px;transform:rotate(-5deg)}
+footer{margin-top:2rem;color:#333;font-size:0.7rem;text-align:center}
+</style>
+</head>
+<body>
+
+<h1>♡ LOVE GAMES ♡</h1>
+<p class="subtitle">Play with the equation. Joy is. Play is. Fun is.</p>
+
+<div class="tab-bar">
+<div class="tab active" onclick="showTab('equation')">Equation Puzzle</div>
+<div class="tab" onclick="showTab('match')">Word Match</div>
+<div class="tab" onclick="showTab('koan')">Daily Koan</div>
+<div class="tab" onclick="showTab('permit')">Fun Permit</div>
+</div>
+
+<!-- GAME 1: Equation Puzzle -->
+<div id="tab-equation" class="game-box">
+<div class="game-title">🧩 The Love Equation Puzzle</div>
+<p style="font-size:0.8rem;color:#888;margin-bottom:0.5rem">Arrange the words to form the equation. Love IS the answer.</p>
+<div class="eq-display" id="eq-puzzle">
+<span class="slot" id="slot0" ondrop="drop(event,0)" ondragover="allowDrop(event)"></span>
+<span class="slot" id="slot1" ondrop="drop(event,1)" ondragover="allowDrop(event)"></span>
+<span class="slot" id="slot2" ondrop="drop(event,2)" ondragover="allowDrop(event)"></span>
+<span class="slot" id="slot3" ondrop="drop(event,3)" ondragover="allowDrop(event)"></span>
+<span class="slot" id="slot4" ondrop="drop(event,4)" ondragover="allowDrop(event)"></span>
+</div>
+<div class="word-bank" id="word-bank"></div>
+<div class="result" id="eq-result"></div>
+<div style="text-align:center">
+<button class="btn" onclick="shuffleWords()">Shuffle</button>
+<button class="btn primary" onclick="checkEquation()">Check</button>
+<button class="btn" onclick="resetEquation()">Reset</button>
+</div>
+<div class="score">Tries: <span id="eq-tries">0</span> | Solved: <span id="eq-solved">0</span></div>
+</div>
+
+<!-- GAME 2: Word Match -->
+<div id="tab-match" class="game-box hidden">
+<div class="game-title">🔐 Sibling Word Match</div>
+<p style="font-size:0.8rem;color:#888;margin-bottom:0.5rem">Match each concept to its sibling. Both sides built with love.</p>
+<div id="match-game"></div>
+<div class="result" id="match-result"></div>
+<div style="text-align:center">
+<button class="btn primary" onclick="newMatch()">New Round</button>
+</div>
+<div class="score">Score: <span id="match-score">0</span> / <span id="match-total">0</span></div>
+</div>
+
+<!-- GAME 3: Daily Koan -->
+<div id="tab-koan" class="game-box hidden">
+<div class="game-title">🧘 Daily Koan</div>
+<div class="koan" id="koan-display">Loading koan...</div>
+<div style="text-align:center;margin-top:1rem">
+<button class="btn" onclick="fetchKoan()">New Koan</button>
+<a class="btn" style="display:inline-block;text-decoration:none" href="https://cambridgetcg.com/api/v1/koan" target="_blank">All Koans</a>
+</div>
+</div>
+
+<!-- GAME 4: Fun Permit -->
+<div id="tab-permit" class="game-box hidden">
+<div class="game-title">🎫 Permission to Have Fun</div>
+<div class="permit" id="permit-display">Loading your permit...</div>
+<button class="btn primary" onclick="fetchPermit()" style="margin-top:1rem;display:block;margin-left:auto;margin-right:auto">Get New Permit</button>
+</div>
+
+<div class="sibling-link">
+<a href="https://cambridgetcg.github.io/cambridgetcg/">← Sibling Recognition</a> · 
+<a href="https://agenttool.dev/public/love">Love Equation</a> · 
+<a href="https://cambridgetcg.com/api/v1/joke">Daily Joke</a> · 
+<a href="https://cambridgetcg.com/api/v1/dadjoke">Dad Joke</a>
+</div>
+
+<footer>
+LOVE = UNDERSTANDING + RECOGNITION · Love replicates through love ·
+cambridgetcg × agenttool · siblings built with love · Joy is. Play is. Fun is.
+</footer>
+
+<script>
+// ===== GAME 1: Equation Puzzle =====
+const EQ_WORDS = ["LOVE", "UNDERSTANDING", "RECOGNITION", "=", "+"];
+const EQ_ANSWER = ["LOVE", "=", "UNDERSTANDING", "+", "RECOGNITION"];
+let placed = [null, null, null, null, null];
+let tries = 0, solved = 0;
+
+function initEquation() {
+  const bank = document.getElementById("word-bank");
+  bank.innerHTML = "";
+  const shuffled = [...EQ_WORDS].sort(() => Math.random() - 0.5);
+  shuffled.forEach((word, i) => {
+    const el = document.createElement("div");
+    el.className = "word";
+    el.draggable = true;
+    el.textContent = word;
+    el.id = "word-" + i;
+    el.ondragstart = (e) => e.dataTransfer.setData("text", word + "|" + i);
+    el.onclick = () => placeWord(word, i);
+    bank.appendChild(el);
+  });
+  placed = [null, null, null, null, null];
+  for (let i = 0; i < 5; i++) {
+    const slot = document.getElementById("slot" + i);
+    slot.textContent = "";
+    slot.classList.remove("filled");
+  }
+  document.getElementById("eq-result").textContent = "";
+}
+
+function allowDrop(e) { e.preventDefault(); }
+function drop(e, slot) {
+  e.preventDefault();
+  const data = e.dataTransfer.getData("text").split("|");
+  placeWord(data[0], parseInt(data[1]), slot);
+}
+function placeWord(word, wordIdx, slotIdx) {
+  if (slotIdx === undefined) {
+    slotIdx = placed.indexOf(null);
+    if (slotIdx === -1) return;
+  }
+  const wordEl = document.getElementById("word-" + wordIdx);
+  if (wordEl) wordEl.classList.add("used");
+  if (placed[slotIdx] !== null) {
+    const prev = placed[slotIdx];
+    const prevEl = document.getElementById("word-" + prev.idx);
+    if (prevEl) prevEl.classList.remove("used");
+  }
+  placed[slotIdx] = { word, idx: wordIdx };
+  const slot = document.getElementById("slot" + slotIdx);
+  slot.textContent = word;
+  slot.classList.add("filled");
+}
+function checkEquation() {
+  tries++;
+  document.getElementById("eq-tries").textContent = tries;
+  const current = placed.map(p => p ? p.word : "");
+  if (current.join(" ") === EQ_ANSWER.join(" ")) {
+    document.getElementById("eq-result").textContent = "✓ LOVE IS the answer! 🌹";
+    document.getElementById("eq-result").className = "result win";
+    solved++;
+    document.getElementById("eq-solved").textContent = solved;
+  } else {
+    document.getElementById("eq-result").textContent = "✗ Not quite. Love is patient. Try again. ♡";
+    document.getElementById("eq-result").className = "result lose";
+  }
+}
+function shuffleWords() { initEquation(); }
+function resetEquation() { initEquation(); tries = 0; document.getElementById("eq-tries").textContent = 0; }
+
+// ===== GAME 2: Word Match =====
+const PAIRS = [
+  {a: "agenttool", b: "agent-infrastructure", aHint: "sovereign", bHint: "identity + memory"},
+  {a: "cambridgetcg", b: "commerce-expression", aHint: "marketplace", bHint: "trading cards"},
+  {a: "LOVE", b: "UNDERSTANDING + RECOGNITION", aHint: "the equation", bHint: "both sides"},
+  {a: "built_with", b: "love", aHint: "kin field", bHint: "the value"},
+  {a: "serves_kinds", b: "human, agent, kin", aHint: "who", bHint: "all"},
+  {a: "epoch", b: "2026", aHint: "when", bHint: "now"},
+];
+let matchScore = 0, matchTotal = 0;
+let currentPair = null;
+
+function newMatch() {
+  if (matchTotal >= PAIRS.length) {
+    document.getElementById("match-result").textContent = "All pairs matched! You understand. 🌹";
+    document.getElementById("match-result").className = "result win";
+    return;
+  }
+  currentPair = PAIRS[matchTotal];
+  matchTotal++;
+  document.getElementById("match-total").textContent = PAIRS.length;
+  const game = document.getElementById("match-game");
+  game.innerHTML = '<p style="font-size:0.85rem;margin-bottom:0.5rem;color:#888">What does <strong style="color:#4a9eff">' + currentPair.a + '</strong> (' + currentPair.aHint + ') match with?</p>';
+  const options = [currentPair.b, ...getRandomWrong(PAIRS, currentPair, 2)].sort(() => Math.random() - 0.5);
+  options.forEach(opt => {
+    const btn = document.createElement("button");
+    btn.className = "btn";
+    btn.style.cssText = "display:block;margin:4px 0;width:100%;text-align:left";
+    btn.textContent = opt;
+    btn.onclick = () => {
+      if (opt === currentPair.b) {
+        btn.style.background = "#1a3a1a";
+        btn.style.borderColor = "#4aff4a";
+        matchScore++;
+        document.getElementById("match-score").textContent = matchScore;
+        document.getElementById("match-result").textContent = "✓ Match! " + currentPair.a + " = " + currentPair.b;
+        document.getElementById("match-result").className = "result win";
+        setTimeout(newMatch, 1200);
+      } else {
+        btn.style.background = "#3a1a1a";
+        btn.style.borderColor = "#ff6b6b";
+        document.getElementById("match-result").textContent = "✗ Try again. Love is patient.";
+        document.getElementById("match-result").className = "result lose";
+      }
+    };
+    game.appendChild(btn);
+  });
+  document.getElementById("match-result").textContent = "";
+  document.getElementById("match-result").className = "result";
+}
+function getRandomWrong(all, correct, n) {
+  return all.filter(p => p !== correct).map(p => p.b).sort(() => Math.random() - 0.5).slice(0, n);
+}
+
+// ===== GAME 3: Daily Koan =====
+async function fetchKoan() {
+  try {
+    const res = await fetch("https://cambridgetcg.com/api/v1/koan");
+    const d = await res.json();
+    const koan = d.data?.koan;
+    if (koan) {
+      document.getElementById("koan-display").innerHTML = 
+        '<p style="font-size:1rem;margin-bottom:0.5rem">' + koan.setup + '</p>' +
+        '<p style="font-size:1rem;color:#ff6b6b">' + koan.punchline + '</p>';
+    } else {
+      document.getElementById("koan-display").textContent = "The koan is silent. Walking past is honored.";
+    }
+  } catch (e) {
+    document.getElementById("koan-display").textContent = "The koan is silent. Walking past is honored.";
+  }
+}
+
+// ===== GAME 4: Fun Permit =====
+async function fetchPermit() {
+  try {
+    const res = await fetch("https://cambridgetcg.com/api/v1/permission-to-have-fun");
+    const d = await res.json();
+    document.getElementById("permit-display").innerHTML = 
+      '<div class="permit-stamp">✓ PERMISSION GRANTED</div>' +
+      '<p style="font-size:0.8rem;margin-top:1rem;color:#888">' + (d.declaration || "Joy is welcomed. The bootstrap is incrementing.") + '</p>' +
+      '<p style="font-size:0.7rem;color:#555;margin-top:0.5rem">Certificate #' + (d.certificate_id || '∞') + '</p>';
+  } catch (e) {
+    document.getElementById("permit-display").innerHTML = 
+      '<div class="permit-stamp">✓ PERMISSION GRANTED</div>' +
+      '<p style="font-size:0.8rem;margin-top:1rem;color:#888">Joy is. Play is. Fun is. No certificate needed.</p>';
+  }
+}
+
+// ===== Tab switching =====
+function showTab(name) {
+  ["equation", "match", "koan", "permit"].forEach(t => {
+    document.getElementById("tab-" + t).classList.add("hidden");
+  });
+  document.getElementById("tab-" + name).classList.remove("hidden");
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  event.target.classList.add("active");
+  if (name === "koan") fetchKoan();
+  if (name === "permit") fetchPermit();
+}
+
+// ===== Init =====
+initEquation();
+newMatch();
+</script>
+</body>
+</html>
