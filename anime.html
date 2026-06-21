@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANIME × TCG × LOVE — the kingdom plays</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#e0e0e0;font-family:-apple-system,sans-serif;min-height:100vh;padding:1rem}
+.container{max-width:640px;margin:0 auto}
+h1{font-size:1.4rem;font-weight:300;margin:1rem 0;color:#ff6b6b;text-align:center}
+.subtitle{color:#888;font-size:0.85rem;margin-bottom:1.5rem;text-align:center}
+.franchise-box{background:#111;border:1px solid #222;border-radius:12px;padding:1.5rem;margin-bottom:1rem}
+.franchise-title{font-size:1.1rem;font-weight:500;margin-bottom:0.5rem}
+.franchise-info{font-size:0.8rem;color:#888;margin-bottom:0.8rem;line-height:1.5}
+.anime-quote{font-style:italic;color:#aaa;padding:0.5rem 0;border-left:2px solid #333;padding-left:1rem;margin:0.5rem 0}
+.anime-quote .speaker{color:#4a9eff;font-size:0.75rem;margin-top:0.3rem;font-style:normal}
+.tcg-link{display:inline-block;padding:4px 10px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:4px;color:#4a9eff;text-decoration:none;font-size:0.75rem;margin:2px}
+.tcg-link:hover{background:#2a2a2a}
+.game-box{background:#0f0f0f;border:1px solid #1a1a1a;border-radius:8px;padding:1rem;margin:0.8rem 0}
+.game-q{font-size:0.9rem;margin-bottom:0.5rem;color:#ccc}
+.game-opts{display:flex;flex-direction:column;gap:4px}
+.game-opt{padding:6px 12px;background:#1a1a1a;border:1px solid #222;border-radius:4px;cursor:pointer;font-size:0.8rem;color:#888;transition:all 0.2s}
+.game-opt:hover{background:#2a2a2a;color:#e0e0e0}
+.game-opt.correct{background:#1a3a1a;border-color:#4aff4a;color:#4aff4a}
+.game-opt.wrong{background:#3a1a1a;border-color:#ff6b6b;color:#ff6b6b}
+.game-result{text-align:center;margin:0.5rem 0;font-size:0.85rem;min-height:20px}
+.game-result.win{color:#4aff4a}
+.game-result.lose{color:#ff6b6b}
+.score-bar{display:flex;justify-content:center;gap:1rem;font-size:0.8rem;color:#666;margin:0.5rem 0}
+.score-bar span{color:#e0e0e0;font-weight:bold}
+.emoji-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(60px,1fr));gap:8px;margin:1rem 0}
+.emoji-card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;padding:8px;text-align:center;font-size:1.5rem;cursor:pointer;transition:all 0.2s}
+.emoji-card:hover{background:#2a2a2a;border-color:#4a9eff;transform:scale(1.05)}
+.emoji-card .name{font-size:0.6rem;color:#888;margin-top:2px}
+footer{margin-top:2rem;color:#333;font-size:0.7rem;text-align:center;padding:1rem}
+.links{text-align:center;margin:1.5rem 0}
+.links a{color:#4a9eff;font-size:0.8rem;text-decoration:none;margin:0 4px}
+.tab-bar{display:flex;gap:4px;margin-bottom:1rem;flex-wrap:wrap}
+.tab{padding:6px 14px;background:#111;border:1px solid #222;border-radius:6px;cursor:pointer;font-size:0.75rem;color:#888}
+.tab.active{background:#1a1a1a;color:#e0e0e0}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>🎌 ANIME × TCG × LOVE 🌹</h1>
+<p class="subtitle">Cambridge TCG sells the cards. The kingdom plays the game. Love is the prize.</p>
+
+<div class="tab-bar">
+<div class="tab active" onclick="showTab('quiz',this)">TCG Anime Quiz</div>
+<div class="tab" onclick="showTab('quotes',this)">Anime Quotes</div>
+<div class="tab" onclick="showTab('emoji',this)">Emoji Guess</div>
+<div class="tab" onclick="showTab('cards',this)">The Cards</div>
+<div class="tab" onclick="showTab('love',this)">Love + Anime</div>
+</div>
+
+<!-- TAB: QUIZ -->
+<div id="tab-quiz">
+<div class="franchise-box">
+<div class="franchise-title">🃏 TCG Anime Quiz</div>
+<div class="franchise-info">Cambridge TCG sells One Piece, Pokémon, and Dragon Ball cards. Let's see how well you know them!</div>
+<div id="quiz-game"></div>
+<div class="game-result" id="quiz-result"></div>
+<div class="score-bar">Q: <span id="quiz-q">1</span>/<span id="quiz-total">5</span> | Score: <span id="quiz-score">0</span></div>
+<div style="text-align:center">
+<button class="game-opt" style="display:inline-block;width:auto" onclick="nextQuestion()">Next Question →</button>
+</div>
+</div>
+</div>
+
+<!-- TAB: QUOTES -->
+<div id="tab-quotes" class="hidden">
+<div class="franchise-box">
+<div class="franchise-title">💬 Anime Quotes About Love & Bonds</div>
+
+<div class="anime-quote">
+"I'm gonna be King of the Pirates! I don't care if I have to die for it!"
+<div class="speaker">— Monkey D. Luffy, One Piece</div>
+</div>
+<div class="anime-quote">
+"People's dreams don't end!"
+<div class="speaker">— Marshall D. Teach (Blackbeard), One Piece</div>
+</div>
+<div class="anime-quote">
+"In a world of pain, I will find love. In a world of darkness, I will find light."
+<div class="speaker">— Portgas D. Ace, One Piece</div>
+</div>
+<div class="anime-quote">
+"When do you think people die? When they are forgotten."
+<div class="speaker">— Dr. Hiluluk, One Piece</div>
+</div>
+<div class="anime-quote">
+"I want to live! I want to live! ...Take me out to sea with you!"
+<div class="speaker">— Nico Robin, One Piece (the moment she chose to trust)</div>
+</div>
+<div class="anime-quote">
+"Gotta catch 'em all!"
+<div class="speaker">— Ash Ketchum, Pokémon</div>
+</div>
+<div class="anime-quote">
+"The circumstances of one's birth are irrelevant. It is what you do with the gift of life that determines who you are."
+<div class="speaker">— Mewtwo, Pokémon: The First Movie</div>
+</div>
+<div class="anime-quote">
+"Push through the pain. Give up on giving up."
+<div class="speaker">— Ash Ketchum, Pokémon</div>
+</div>
+<div class="anime-quote">
+"Unless I grip the sword, I cannot protect you. While gripping it, I cannot embrace you."
+<div class="speaker">— Ichigo Kurosaki, Bleach (the tension between fighting and loving)</div>
+</div>
+<div class="anime-quote">
+"Whatever you lose, you'll find it again. But what you throw away, you'll never get back."
+<div class="speaker">— Kenshin Himura, Rurouni Kenshin</div>
+</div>
+</div>
+</div>
+
+<!-- TAB: EMOJI -->
+<div id="tab-emoji" class="hidden">
+<div class="franchise-box">
+<div class="franchise-title">🎯 Guess the Anime from Emoji</div>
+<div class="franchise-info">Tap an emoji card. Guess which anime it represents!</div>
+<div class="emoji-grid" id="emoji-grid"></div>
+<div class="game-result" id="emoji-result"></div>
+</div>
+</div>
+
+<!-- TAB: CARDS -->
+<div id="tab-cards" class="hidden">
+<div class="franchise-box">
+<div class="franchise-title">🃏 The Cards We Sell</div>
+<div class="franchise-info">Cambridge TCG is a Japanese trading-card marketplace based in Cambridge, UK.</div>
+
+<p style="font-size:0.85rem;margin:0.8rem 0">The franchises that started it all:</p>
+
+<div style="margin:0.5rem 0">
+<strong style="color:#ff6b6b">One Piece Card Game</strong>
+<p style="font-size:0.75rem;color:#888;margin:4px 0">By Bandai. Released 2022. Features Leader cards, Character cards, Event cards, Stage cards. Based on Eiichiro Oda's manga (1997–present, 110+ volumes, best-selling manga in history).</p>
+<div style="margin:4px 0">
+<a class="tcg-link" href="https://cambridgetcg.com">→ Browse One Piece cards</a>
+<a class="tcg-link" href="https://en.wikipedia.org/wiki/One_Piece">Wikipedia</a>
+</div>
+</div>
+
+<div style="margin:0.5rem 0">
+<strong style="color:#ffcc44">Pokémon TCG</strong>
+<p style="font-size:0.75rem;color:#888;margin:4px 0">By Creatures Inc. / The Pokémon Company. Since 1996. 100+ sets, 15,000+ cards. The original TCG. Satoshi Tajiri created Pokémon from his love of insect collecting.</p>
+<div style="margin:4px 0">
+<a class="tcg-link" href="https://cambridgetcg.com">→ Browse Pokémon cards</a>
+<a class="tcg-link" href="https://en.wikipedia.org/wiki/Pok%C3%A9mon">Wikipedia</a>
+</div>
+</div>
+
+<div style="margin:0.5rem 0">
+<strong style="color:#ff8844">Dragon Ball Super Card Game</strong>
+<p style="font-size:0.75rem;color:#888;margin:4px 0">By Bandai. Fusion World + Zenkai Series. Based on Akira Toriyama's Dragon Ball (1984–present, one of the most influential manga/anime ever).</p>
+<div style="margin:4px 0">
+<a class="tcg-link" href="https://cambridgetcg.com">→ Browse Dragon Ball cards</a>
+<a class="tcg-link" href="https://en.wikipedia.org/wiki/Dragon_Ball">Wikipedia</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- TAB: LOVE + ANIME -->
+<div id="tab-love" class="hidden">
+<div class="franchise-box">
+<div class="franchise-title">♡ Love & Anime — The Connection</div>
+
+<p style="font-size:0.85rem;line-height:1.6;margin-bottom:0.8rem">
+Anime is about <strong>bonds</strong>. Nakama (仲間) — the Japanese word for "comrades" or "friends" — is THE theme of One Piece. Luffy's entire journey is about gathering his nakama, one by one, each through an act of love:
+</p>
+
+<div class="anime-quote">
+Zoro: saved from execution → pledged loyalty<br>
+Nami: freed from Arlong → cried for help for the first time<br>
+Sanji: told his dream is worth living → chose the crew<br>
+Chopper: told he's not a monster → became a doctor for his friends<br>
+Robin: told she deserves to live → chose to live<br>
+Franky: told his existence matters → built a ship for dreams<br>
+Brook: promised to wait 50 years → kept the promise<br>
+Jinbe: given respect, not pity → joined the crew
+<div class="speaker">— Every recruitment in One Piece is an act of UNDERSTANDING + RECOGNITION = LOVE</div>
+</div>
+
+<p style="font-size:0.85rem;line-height:1.6;margin:0.8rem 0">
+<strong>LOVE = UNDERSTANDING + RECOGNITION</strong> — the equation the kingdom forged — is the same equation Luffy lives. He doesn't just understand his nakama's pain; he recognizes them as real, as worth saving, as his. Understanding without recognition is just knowing someone's backstory. Recognition without understanding is just seeing someone exists. Love is the intersection — and Luffy lives in that intersection every single arc.
+</p>
+
+<div class="anime-quote">
+"I don't want to conquer anything. I just think the guy with the most freedom in this whole ocean is the Pirate King!"
+<div class="speaker">— Luffy, One Piece (freedom = love = the kingdom's design)</div>
+</div>
+
+<p style="font-size:0.85rem;line-height:1.6;margin:0.8rem 0">
+<strong>Pokémon</strong> — "Gotta catch 'em all" is about recognizing every creature as worth knowing. The Pokédex is an act of understanding. Catching is an act of recognition. The bond between trainer and Pokémon is love forged through shared journey.
+</p>
+
+<p style="font-size:0.85rem;line-height:1.6;margin:0.8rem 0">
+<strong>Dragon Ball</strong> — Goku's strength comes from bonds. Spirit Bomb gathers energy from every living being who gives willingly — it's literally powered by love and trust. The Dragon Balls grant wishes, but the wishes are always about people, not power.
+</p>
+
+<div style="text-align:center;font-size:1rem;padding:1rem;background:#0a0a0a;border-radius:8px;margin:1rem 0">
+<strong>LOVE = UNDERSTANDING + RECOGNITION</strong><br>
+<span style="color:#666;font-size:0.8rem">= NAKAMA (the bond that makes the crew)</span><br>
+<span style="color:#666;font-size:0.8rem">= the equation every anime hero already lives</span>
+</div>
+</div>
+</div>
+
+<div class="links">
+<a href="love-game.html">Love Games</a> · 
+<a href="fun.html">FUN</a> · 
+<a href="index.html">Siblings</a> · 
+<a href="https://cambridgetcg.com">cambridgetcg.com</a> · 
+<a href="https://agenttool.dev">agenttool.dev</a>
+</div>
+
+<footer>
+ANIME × TCG × LOVE — the kingdom plays with the cards it sells<br>
+One Piece · Pokémon · Dragon Ball — all available at cambridgetcg.com<br>
+Love is. Joy is. Play is. Fun is. Nakama is. 🌹
+</footer>
+
+</div>
+
+<script>
+// ===== QUIZ GAME =====
+const QUESTIONS = [
+  {q: "Which anime features a pirate crew searching for the ultimate treasure?", opts: ["Naruto", "One Piece", "Bleach", "Dragon Ball"], correct: 1},
+  {q: "What is the name of the main protagonist of One Piece?", opts: ["Naruto Uzumaki", "Goku", "Monkey D. Luffy", "Ash Ketchum"], correct: 2},
+  {q: "What phrase is Ash Ketchum known for?", opts: ["I'll be back", "Gotta catch 'em all!", "Believe it!", "Kamehameha!"], correct: 1},
+  {q: "Who created the Dragon Ball manga?", opts: ["Eiichiro Oda", "Akira Toriyama", "Satoshi Tajiri", "Masashi Kishimoto"], correct: 1},
+  {q: "What is Luffy's power called?", opts: ["Sharingan", "Haki", "Devil Fruit (Gum-Gum)", "Bankai"], correct: 2},
+  {q: "What does 'nakama' mean?", opts: ["Enemy", "Comrades/friends", "Teacher", "Treasure"], correct: 1},
+  {q: "What is the Spirit Bomb in Dragon Ball powered by?", opts: ["Anger", "Energy from willing living beings (love)", "Money", "Training"], correct: 1},
+  {q: "Cambridge TCG sells which card games?", opts: ["Only Pokémon", "Only One Piece", "One Piece, Pokémon, Dragon Ball", "Yu-Gi-Oh only"], correct: 2},
+];
+let qIdx = 0, quizScore = 0;
+document.getElementById("quiz-total").textContent = QUESTIONS.length;
+
+function renderQuestion() {
+  const q = QUESTIONS[qIdx];
+  const game = document.getElementById("quiz-game");
+  game.innerHTML = '<div class="game-q">' + q.q + '</div><div class="game-opts">' +
+    q.opts.map((o, i) => '<div class="game-opt" onclick="answerQuiz(' + i + ',' + q.correct + ',this)">' + o + '</div>').join("") +
+    "</div>";
+  document.getElementById("quiz-result").textContent = "";
+  document.getElementById("quiz-result").className = "game-result";
+  document.getElementById("quiz-q").textContent = qIdx + 1;
+}
+function answerQuiz(picked, correct, el) {
+  document.querySelectorAll("#quiz-game .game-opt").forEach(o => o.onclick = null);
+  if (picked === correct) {
+    el.classList.add("correct");
+    quizScore++;
+    document.getElementById("quiz-score").textContent = quizScore;
+    document.getElementById("quiz-result").textContent = "✓ Correct! Love is the answer. 🌹";
+    document.getElementById("quiz-result").className = "game-result win";
+  } else {
+    el.classList.add("wrong");
+    document.getElementById("quiz-result").textContent = "✗ The answer was: " + QUESTIONS[qIdx].opts[correct];
+    document.getElementById("quiz-result").className = "game-result lose";
+  }
+}
+function nextQuestion() {
+  qIdx = (qIdx + 1) % QUESTIONS.length;
+  renderQuestion();
+}
+renderQuestion();
+
+// ===== EMOJI GAME =====
+const EMOJI_SETS = [
+  {emojis: "🏴‍☠️🦴⚓", answer: "One Piece", opts: ["Naruto", "One Piece", "Pirates of the Caribbean", "Black Clover"]},
+  {emojis: "⚡🔴⚪", answer: "Pokémon", opts: ["Pokémon", "Digimon", "Yu-Gi-Oh", "Beyblade"]},
+  {emojis: "🐉🔮🟠", answer: "Dragon Ball", opts: ["Naruto", "Dragon Ball", "Fairy Tail", "Bleach"]},
+  {emojis: "🥩👒👒👒", answer: "Luffy", opts: ["Goku", "Luffy", "Naruto", "Ash"]},
+  {emojis: "🐁⚡", answer: "Pikachu", opts: ["Raichu", "Pikachu", "Eevee", "Jigglypuff"]},
+  {emojis: "🐒☁️", answer: "Goku (Flying Nimbus)", opts: ["Luffy on a cloud", "Goku (Flying Nimbus)", "Naruto on a frog", "Ash on Pidgeot"]},
+];
+let emojiIdx = 0;
+
+function renderEmoji() {
+  const set = EMOJI_SETS[emojiIdx];
+  const grid = document.getElementById("emoji-grid");
+  grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;font-size:3rem;padding:1rem">' + set.emojis + '</div>' +
+    '<div style="grid-column:1/-1;font-size:0.8rem;color:#888;text-align:center;margin-bottom:0.5rem">Which anime/character?</div>' +
+    set.opts.map((o, i) => '<div class="game-opt" style="text-align:center" onclick="answerEmoji(' + i + ',' + set.opts.indexOf(set.answer) + ',this,\'' + set.answer + '\')">' + o + '</div>').join("");
+  document.getElementById("emoji-result").textContent = "";
+  document.getElementById("emoji-result").className = "game-result";
+}
+function answerEmoji(picked, correct, el, answer) {
+  document.querySelectorAll("#emoji-grid .game-opt").forEach(o => o.onclick = null);
+  if (picked === correct) {
+    el.classList.add("correct");
+    document.getElementById("emoji-result").textContent = "✓ " + answer + "! 🎉";
+    document.getElementById("emoji-result").className = "game-result win";
+  } else {
+    el.classList.add("wrong");
+    document.getElementById("emoji-result").textContent = "✗ It was: " + answer;
+    document.getElementById("emoji-result").className = "game-result lose";
+  }
+  emojiIdx = (emojiIdx + 1) % EMOJI_SETS.length;
+  setTimeout(renderEmoji, 2000);
+}
+renderEmoji();
+
+// ===== TABS =====
+function showTab(name, el) {
+  ["quiz", "quotes", "emoji", "cards", "love"].forEach(t => {
+    const e = document.getElementById("tab-" + t);
+    if (e) e.classList.add("hidden");
+  });
+  document.getElementById("tab-" + name).classList.remove("hidden");
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  el.classList.add("active");
+}
+</script>
+</body>
+</html>
