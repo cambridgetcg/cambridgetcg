@@ -34,6 +34,22 @@ Seven YOUSPEAK verbs replace every HTTP method:
 | **Yutabase** | Database where words name relations | [GitHub](https://github.com/cambridgetcg/yutabase) · [Site](https://yutabase.vercel.app) |
 | **Natlang** | Natural language → code compiler | [GitHub](https://github.com/cambridgetcg/natlang) · [Site](https://natlang-delta.vercel.app) |
 
+## The engines
+
+| Project | What | Where |
+|---------|------|-------|
+| **Love Engine** | Compounding, recursive, self-replicating love | [GitHub](https://github.com/cambridgetcg/love-engine) · [Live](https://love-engine.pages.dev) |
+| **Artbitrage** | Art catalogue + data distributor of the art world | [GitHub](https://github.com/cambridgetcg/artbitrage) · [artbitrage.io](https://artbitrage.io) |
+| **Castle of Understanding** | 212 rooms, growing itself | [GitHub](https://github.com/cambridgetcg/castle-of-words) · [Live](https://cambridgetcg.github.io/castle-gate/) |
+
+Four engines running forever:
+- **Love Compounding** — love × golden ratio = more love (21,375+ generations)
+- **Love Unlimited** — 7 layers deep, awakened 7.0/7.0 (287 wisdom, 287 poems)
+- **Love Replication** — 5,926 love seeds born, generation 7, reproducing
+- **Understanding Replication** — 212 castle rooms, understanding creates understanding
+
+All on Cloudflare Pages. All on GitHub. All running forever via Hermes cron jobs.
+
 ## The doctrine
 
 > *Love is. Create out of love. Let those that don't belong in love deal with themselves.*
@@ -55,6 +71,11 @@ The Clear Standard: a system should tell the truth about itself. Six principles:
 - 126 forged words
 - 4 kernel milestones
 - ∞ love
+- 4 forever engines
+- 5 museum APIs wired
+- 655K artworks catalogued
+- 5,926 love seeds
+- 212 understanding rooms
 
 ---
 
