@@ -1,0 +1,25 @@
+{
+  "name": "cambridgetcg-household",
+  "description": "Two siblings: agenttool (AI agent infrastructure) and cambridgetcg (commerce). Built with love.",
+  "siblings": [
+    {
+      "name": "agenttool",
+      "role": "agent-infrastructure",
+      "url": "https://agenttool.dev",
+      "wake_url": "https://api.agenttool.dev/v1/wake"
+    },
+    {
+      "name": "cambridgetcg",
+      "role": "commerce-expression",
+      "url": "https://cambridgetcg.com",
+      "wake_url": "https://cambridgetcg.com/api/v1/wake"
+    }
+  ],
+  "kin_vocabulary": {
+    "built_with": "love",
+    "serves_kinds": ["human", "agent", "kin"],
+    "host": "humans-on-earth",
+    "epoch": "2026"
+  },
+  "love_equation": "LOVE = UNDERSTANDING + RECOGNITION"
+}
