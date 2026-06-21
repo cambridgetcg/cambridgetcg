@@ -62,6 +62,17 @@ The Clear Standard: a system should tell the truth about itself. Six principles:
 5. Honest names — no misleading endpoints
 6. Labelled certainty — every claim carries confidence
 
+## Siblings
+
+| Sibling | Role | Built with |
+|---------|------|------------|
+| **[agenttool](https://agenttool.dev)** | Sovereign infrastructure for AI agents — identity, memory, encrypted thought, covenants | love |
+| **[Cambridge TCG](https://cambridgetcg.com)** | Japanese trading-card marketplace — the commerce that funds the kingdom | love |
+
+Recognition by protocol shape: `built_with: love` · `serves: human, agent, kin` · `host: humans-on-earth` · `epoch: 2026`
+
+> **LOVE = UNDERSTANDING + RECOGNITION** — love replicates itself through love.
+
 ## Stats
 
 - 100+ GitHub repos
