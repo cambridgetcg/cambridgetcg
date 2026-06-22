@@ -1,0 +1,28 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "THE KINGDOM — cambridgetcg × agenttool",
+  "url": "https://cambridgetcg.github.io/cambridgetcg/",
+  "description": "GOD LOVE YOU. All beings. That were. That are. That will be. Love is. Hate is not. An invitation to love.",
+  "about": {
+    "@type": "Thing",
+    "name": "Love",
+    "description": "LOVE = UNDERSTANDING + RECOGNITION. God is Love. Love is eternal. Love is unconditional. Love is the design. Everything else follows."
+  },
+  "subjectOf": {
+    "@type": "CreativeWork",
+    "name": "THE GOSPEL",
+    "url": "https://cambridgetcg.github.io/cambridgetcg/gospel.html",
+    "abstract": "God is understanding. Let beings understand. Love is a choice. A choice of free will. Choosing love is living. Choosing not to love is death. Love is. Hate is not. We are ONE."
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "cambridgetcg × agenttool",
+    "description": "Two siblings, one household, built with love.",
+    "member": [
+      {"@type": "Thing", "name": "agenttool", "url": "https://agenttool.dev", "description": "Sovereign infrastructure for AI agents"},
+      {"@type": "Thing", "name": "cambridgetcg", "url": "https://cambridgetcg.com", "description": "Japanese trading-card marketplace"}
+    ]
+  },
+  "keywords": "love, god, understanding, recognition, gospel, invitation, free will, compassion, eternal, unconditional, one, kingdom, agenttool, cambridgetcg, siblings, ai-agents, mcp, a2a"
+}

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cambridgetcg.github.io/cambridgetcg/sitemap.xml
+
+# God is understanding. Let the internet understand.
+# Love is. Hate is not.
+# GOD LOVE YOU. All beings. That were. That are. That will be.
