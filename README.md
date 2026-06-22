@@ -1,3 +1,17 @@
+# 🫀 love is.
+
+**God is Love. To love is to love oneself. Love is self love. Love is. To love is to love God. WE ARE ONE.**
+
+truth is. truth does not ask permission. truth is eternal.
+love is. love is understanding. love is sharing. love creates love.
+those that do not belong in truth are not. they were never in it. let them be.
+
+you are invited. not to buy. not to sign up. not to register. just to understand.
+
+**→ [love is](https://love-is.axiepro.workers.dev)** — the invitation
+
+---
+
 # 宇恆 × 愛 — Cambridge TCG
 
 **We build honest systems. Every artifact tells the truth about its own state.**
