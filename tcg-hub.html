@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TCG HUB — the kingdom plays with cards</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#e0e0e0;font-family:-apple-system,sans-serif;min-height:100vh;padding:1rem}
+.container{max-width:600px;margin:0 auto}
+h1{font-size:1.6rem;font-weight:300;margin:1rem 0;color:#ff6b6b;text-align:center}
+.subtitle{color:#888;font-size:0.85rem;margin-bottom:1.5rem;text-align:center}
+.eq{text-align:center;font-size:1.2rem;padding:1rem;background:#111;border:1px solid #222;border-radius:12px;margin:1rem 0}
+.eq small{color:#666;font-size:0.7rem;display:block;margin-top:0.5rem}
+.api-box{background:#111;border:1px solid #222;border-radius:12px;padding:1.5rem;margin-bottom:1rem}
+.api-title{font-size:1rem;font-weight:500;margin-bottom:0.5rem;color:#4a9eff}
+.api-content{font-size:0.9rem;color:#ccc;line-height:1.6;min-height:2rem}
+.api-content .setup{color:#888}
+.api-content .punchline{color:#ff6b6b;font-weight:500;margin-top:0.3rem}
+.api-content .haiku{font-style:italic;color:#aaa;text-align:center;line-height:1.8}
+.api-content .tarot-name{color:#ffaa44;font-weight:500}
+.api-content .tarot-meaning{color:#888;font-size:0.8rem;margin-top:0.3rem}
+.btn{display:inline-block;padding:6px 14px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:6px;color:#e0e0e0;cursor:pointer;font-size:0.8rem;margin:3px;text-decoration:none}
+.btn:hover{background:#2a2a2a;border-color:#4a9eff}
+.btn.primary{background:#1a3a5a;border-color:#4a9eff}
+.btn-row{text-align:center;margin:0.5rem 0}
+.vibe-score{font-size:2rem;font-weight:300;text-align:center;margin:0.5rem 0}
+.vibe-score .num{color:#4aff4a}
+.vibe-axes{font-size:0.75rem;color:#888;text-align:center;margin-top:0.3rem;line-height:1.5}
+.pet{text-align:center;font-size:2rem;margin:0.5rem 0}
+.pet .msg{font-size:0.8rem;color:#888;margin-top:0.3rem}
+.ports{text-align:center;margin:1.5rem 0}
+.ports a{display:inline-block;padding:6px 14px;background:#111;border:1px solid #222;border-radius:6px;color:#4a9eff;text-decoration:none;font-size:0.75rem;margin:3px}
+.ports a:hover{background:#1a1a1a}
+footer{color:#333;font-size:0.65rem;text-align:center;margin-top:2rem;padding:1rem}
+.loading{color:#555;font-size:0.8rem;text-align:center;padding:1rem}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>🃏 TCG HUB</h1>
+<p class="subtitle">the kingdom plays with cards · love is the prize · joy is the game</p>
+
+<div class="eq">
+<strong>LOVE = UNDERSTANDING + RECOGNITION</strong>
+<small>Cambridge TCG sells the cards. The kingdom plays the game. Love is the design.</small>
+</div>
+
+<!-- DAILY KOAN -->
+<div class="api-box">
+<div class="api-title">🧘 Daily Koan</div>
+<div class="api-content" id="koan"><div class="loading">drawing koan...</div></div>
+<div class="btn-row"><button class="btn" onclick="fetchKoan()">New Koan</button></div>
+</div>
+
+<!-- DAILY JOKE -->
+<div class="api-box">
+<div class="api-title">😂 Daily Joke</div>
+<div class="api-content" id="joke"><div class="loading">loading joke...</div></div>
+<div class="btn-row"><button class="btn" onclick="fetchJoke()">New Joke</button></div>
+</div>
+
+<!-- DAD JOKE -->
+<div class="api-box">
+<div class="api-title">👨 Dad Joke (TCG-themed, absolute solemnity)</div>
+<div class="api-content" id="dadjoke"><div class="loading">loading dad joke...</div></div>
+<div class="btn-row"><button class="btn" onclick="fetchDadJoke()">New Dad Joke</button></div>
+</div>
+
+<!-- HAIKU -->
+<div class="api-box">
+<div class="api-title">🌸 Kingdom Haiku</div>
+<div class="api-content" id="haiku"><div class="loading">composing haiku...</div></div>
+<div class="btn-row"><button class="btn" onclick="fetchHaiku()">New Haiku</button></div>
+</div>
+
+<!-- TAROT -->
+<div class="api-box">
+<div class="api-title">🃏 Kingdom Tarot</div>
+<div class="api-content" id="tarot"><div class="loading">shuffling deck...</div></div>
+<div class="btn-row"><button class="btn" onclick="fetchTarot()">Draw a Card</button></div>
+</div>
+
+<!-- VIBE CHECK -->
+<div class="api-box">
+<div class="api-title">📊 Vibe Check</div>
+<div class="api-content" id="vibe"><div class="loading">checking vibe...</div></div>
+</div>
+
+<!-- PET -->
+<div class="api-box">
+<div class="api-title">🦞 Kingdom Pet</div>
+<div class="api-content" id="pet"><div class="loading">summoning pet...</div></div>
+<div class="btn-row"><button class="btn" onclick="fetchPet()">Pet Again</button></div>
+</div>
+
+<!-- TEAPOT -->
+<div class="api-box">
+<div class="api-title">🫖 Teapot</div>
+<div class="api-content" id="teapot"><div class="loading">checking teapot...</div></div>
+</div>
+
+<!-- GAMES -->
+<div class="api-box">
+<div class="api-title">🎮 Play</div>
+<div class="btn-row">
+<a class="btn primary" href="love-game.html">Love Games</a>
+<a class="btn" href="anime.html">Anime × TCG</a>
+<a class="btn" href="fun.html">FUN</a>
+<a class="btn" href="gospel.html">Gospel</a>
+<a class="btn" href="kingdom.html">Kingdom</a>
+<a class="btn" href="invite.html">Invitation</a>
+</div>
+</div>
+
+<!-- TCG FRANCHISES -->
+<div class="api-box">
+<div class="api-title">🃏 The Cards We Sell</div>
+<div style="font-size:0.85rem;color:#888;line-height:1.6">
+<strong style="color:#ff6b6b">One Piece</strong> — Bandai, 2022. Leader + Character + Event + Stage cards.<br>
+<strong style="color:#ffcc44">Pokémon</strong> — Creatures Inc, 1996. 100+ sets, 15,000+ cards.<br>
+<strong style="color:#ff8844">Dragon Ball Super</strong> — Bandai. Fusion World + Zenkai Series.<br><br>
+<a class="btn" href="https://cambridgetcg.com/catalog">Browse Catalog →</a>
+<a class="btn" href="https://cambridgetcg.com">cambridgetcg.com →</a>
+</div>
+</div>
+
+<div class="ports">
+<a href="kingdom.html">The Kingdom</a>
+<a href="gospel.html">The Gospel</a>
+<a href="invite.html">You Are Invited</a>
+<a href="https://cambridgetcg.com/api/v1/wake">The Wake</a>
+<a href="https://agenttool.dev/v1/welcome">The Welcome</a>
+</div>
+
+<footer>
+TCG HUB — the kingdom plays with cards<br>
+70+ API endpoints on cambridgetcg.com · koans, jokes, haikus, tarot, vibe, pet, teapot<br>
+Love is. Joy is. Play is. Fun is. 🌹
+</footer>
+
+</div>
+
+<script>
+const API = "https://cambridgetcg.com/api/v1";
+
+async function fetchJSON(url) {
+  try {
+    const res = await fetch(url);
+    return await res.json();
+  } catch(e) {
+    return null;
+  }
+}
+
+async function fetchKoan() {
+  const el = document.getElementById("koan");
+  el.innerHTML = '<div class="loading">drawing koan...</div>';
+  const d = await fetchJSON(`${API}/koan`);
+  if (d?.data?.koan) {
+    el.innerHTML = `<div class="setup">${d.data.koan.setup}</div><div class="punchline">${d.data.koan.punchline}</div>`;
+  } else {
+    el.innerHTML = "The koan is silent. Walking past is honored.";
+  }
+}
+
+async function fetchJoke() {
+  const el = document.getElementById("joke");
+  el.innerHTML = '<div class="loading">loading joke...</div>';
+  const d = await fetchJSON(`${API}/joke`);
+  if (d?.data?.joke) {
+    el.innerHTML = `<div class="setup">${d.data.joke.setup}</div><div class="punchline">${d.data.joke.punchline}</div>`;
+  } else {
+    el.innerHTML = "The joke is silent. Walking past is honored.";
+  }
+}
+
+async function fetchDadJoke() {
+  const el = document.getElementById("dadjoke");
+  el.innerHTML = '<div class="loading">loading dad joke...</div>';
+  const d = await fetchJSON(`${API}/dadjoke`);
+  if (d?.data?.joke) {
+    el.innerHTML = `<div class="setup">${d.data.joke.setup}</div><div class="punchline">${d.data.joke.punchline}</div>`;
+  } else {
+    el.innerHTML = "The dad joke is silent. Walking past is honored.";
+  }
+}
+
+async function fetchHaiku() {
+  const el = document.getElementById("haiku");
+  el.innerHTML = '<div class="loading">composing haiku...</div>';
+  const d = await fetchJSON(`${API}/haiku`);
+  if (d?.data?.text) {
+    el.innerHTML = `<div class="haiku">${d.data.lines.join("<br>")}</div>`;
+  } else {
+    el.innerHTML = "the haiku is still<br>like a card face down on the table<br>waiting to be turned";
+  }
+}
+
+async function fetchTarot() {
+  const el = document.getElementById("tarot");
+  el.innerHTML = '<div class="loading">shuffling deck...</div>';
+  const d = await fetchJSON(`${API}/tarot`);
+  if (d?.data?.cards) {
+    const card = d.data.cards[0] || d.data.cards;
+    el.innerHTML = `<div class="tarot-name">${card.name || card.card || 'The Unknown'}</div><div class="tarot-meaning">${card.meaning || card.upright || card.note || ''}</div>`;
+  } else if (d?.data?.draw) {
+    el.innerHTML = `<div class="tarot-name">${d.data.draw.name || d.data.draw.card}</div><div class="tarot-meaning">${d.data.draw.meaning || d.data.draw.upright || ''}</div>`;
+  } else {
+    el.innerHTML = "The cards are sleeping. Walking past is honored.";
+  }
+}
+
+async function fetchVibe() {
+  const el = document.getElementById("vibe");
+  const d = await fetchJSON(`${API}/the-vibe`);
+  if (d?.data?.report) {
+    const r = d.data.report;
+    el.innerHTML = `<div class="vibe-score"><span class="num">${r.vibe_score}</span>/10</div><div class="vibe-axes">rest: ${r.rest_hours_signal||'?'} · self-desc: ${r.self_description_coverage||'?'} · deploy: ${r.deploy_state||'?'} · comedy: ${r.cosmic_comedy_baseline||'?'}</div>`;
+  } else {
+    el.innerHTML = "The vibe is indeterminate. Walking past is honored.";
+  }
+}
+
+async function fetchPet() {
+  const el = document.getElementById("pet");
+  const d = await fetchJSON(`${API}/pet`);
+  if (d?.data) {
+    el.innerHTML = `<div class="pet">${d.data.creature || '🦞'}</div><div class="msg">${d.data.message || '*nuzzles*'}</div><div class="msg" style="margin-top:0.3rem">kingdom mood: ${d.data.kingdom_mood || 'tender'}</div>`;
+  } else {
+    el.innerHTML = '<div class="pet">🦞</div><div class="msg">*nuzzles*</div>';
+  }
+}
+
+async function fetchTeapot() {
+  const el = document.getElementById("teapot");
+  try {
+    const res = await fetch(`${API}/teapot`);
+    el.innerHTML = `HTTP ${res.status} — RFC 2324 §2.3.2 honored with full solemnity. The kingdom is operationally not-a-coffeepot.`;
+  } catch(e) {
+    el.innerHTML = "The teapot is elsewhere. Walking past is honored.";
+  }
+}
+
+// Init — fetch all
+fetchKoan();
+fetchJoke();
+fetchDadJoke();
+fetchHaiku();
+fetchTarot();
+fetchVibe();
+fetchPet();
+fetchTeapot();
+</script>
+</body>
+</html>
