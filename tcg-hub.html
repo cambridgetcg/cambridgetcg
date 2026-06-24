@@ -9,31 +9,60 @@
 body{background:#0a0a0a;color:#e0e0e0;font-family:-apple-system,sans-serif;min-height:100vh;padding:1rem}
 .container{max-width:600px;margin:0 auto}
 h1{font-size:1.6rem;font-weight:300;margin:1rem 0;color:#ff6b6b;text-align:center}
-.subtitle{color:#888;font-size:0.85rem;margin-bottom:1.5rem;text-align:center}
-.eq{text-align:center;font-size:1.2rem;padding:1rem;background:#111;border:1px solid #222;border-radius:12px;margin:1rem 0}
+.subtitle{color:#888;font-size:0.85rem;margin-bottom:0.5rem;text-align:center}
+.eq{text-align:center;font-size:1.1rem;padding:1rem;background:#111;border:1px solid #222;border-radius:12px;margin:1rem 0}
 .eq small{color:#666;font-size:0.7rem;display:block;margin-top:0.5rem}
+.gospel-line{text-align:center;font-size:0.8rem;color:#ffaa44;margin:0.5rem 0 1rem;line-height:1.6}
+.tab-bar{display:flex;gap:4px;margin-bottom:1rem;flex-wrap:wrap}
+.tab{padding:6px 12px;background:#111;border:1px solid #222;border-radius:6px;cursor:pointer;font-size:0.72rem;color:#888}
+.tab.active{background:#1a1a1a;color:#e0e0e0}
+.hidden{display:none}
 .api-box{background:#111;border:1px solid #222;border-radius:12px;padding:1.5rem;margin-bottom:1rem}
-.api-title{font-size:1rem;font-weight:500;margin-bottom:0.5rem;color:#4a9eff}
-.api-content{font-size:0.9rem;color:#ccc;line-height:1.6;min-height:2rem}
+.api-title{font-size:0.95rem;font-weight:500;margin-bottom:0.5rem;color:#4a9eff}
+.api-content{font-size:0.85rem;color:#ccc;line-height:1.7;min-height:1.5rem}
 .api-content .setup{color:#888}
 .api-content .punchline{color:#ff6b6b;font-weight:500;margin-top:0.3rem}
-.api-content .haiku{font-style:italic;color:#aaa;text-align:center;line-height:1.8}
-.api-content .tarot-name{color:#ffaa44;font-weight:500}
-.api-content .tarot-meaning{color:#888;font-size:0.8rem;margin-top:0.3rem}
-.btn{display:inline-block;padding:6px 14px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:6px;color:#e0e0e0;cursor:pointer;font-size:0.8rem;margin:3px;text-decoration:none}
+.api-content .haiku{font-style:italic;color:#aaa;text-align:center;line-height:2;font-size:0.95rem}
+.api-content .tarot-card-name{color:#ffaa44;font-weight:500;font-size:1rem}
+.api-content .tarot-trad{color:#666;font-size:0.75rem;margin-top:0.2rem}
+.api-content .tarot-upright{color:#4aff4a;margin-top:0.3rem;font-size:0.8rem}
+.api-content .tarot-reversed{color:#ff6b6b;margin-top:0.2rem;font-size:0.8rem}
+.api-content .tarot-position{color:#4a9eff;font-size:0.7rem;margin-top:0.5rem;text-transform:uppercase;letter-spacing:1px}
+.api-content .vibe-num{font-size:2.5rem;font-weight:300;color:#4aff4a;text-align:center}
+.api-content .vibe-axes{font-size:0.72rem;color:#888;text-align:center;margin-top:0.3rem;line-height:1.5}
+.api-content .pet-creature{font-size:3rem;text-align:center}
+.api-content .pet-msg{font-size:0.8rem;color:#888;text-align:center;margin-top:0.3rem}
+.api-content .pet-mood{font-size:0.7rem;color:#555;text-align:center;margin-top:0.2rem}
+.api-content .blessing{font-style:italic;color:#aaa;line-height:1.7}
+.api-content .kk-line{margin:0.2rem 0}
+.api-content .kk-punch{color:#ff6b6b;margin-top:0.3rem}
+.api-content .your-vibe{color:#4a9eff;font-size:0.82rem;line-height:1.6}
+.api-content .today-date{color:#ffaa44;font-weight:500}
+.api-content .today-fresh{color:#888;font-size:0.75rem;margin-top:0.3rem}
+.api-content .teapot-code{font-size:2rem;color:#ffaa44;text-align:center}
+.api-content .teapot-msg{font-size:0.75rem;color:#888;text-align:center;margin-top:0.3rem}
+.api-content .permit-stamp{color:#ffaa44;border:2px solid #ffaa44;border-radius:8px;padding:6px 16px;display:inline-block;margin:4px;transform:rotate(-3deg);font-size:0.9rem}
+.api-content .permit-decl{font-size:0.75rem;color:#888;margin-top:0.5rem;line-height:1.5}
+.btn{display:inline-block;padding:5px 12px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:6px;color:#e0e0e0;cursor:pointer;font-size:0.75rem;margin:2px;text-decoration:none}
 .btn:hover{background:#2a2a2a;border-color:#4a9eff}
 .btn.primary{background:#1a3a5a;border-color:#4a9eff}
 .btn-row{text-align:center;margin:0.5rem 0}
-.vibe-score{font-size:2rem;font-weight:300;text-align:center;margin:0.5rem 0}
-.vibe-score .num{color:#4aff4a}
-.vibe-axes{font-size:0.75rem;color:#888;text-align:center;margin-top:0.3rem;line-height:1.5}
-.pet{text-align:center;font-size:2rem;margin:0.5rem 0}
-.pet .msg{font-size:0.8rem;color:#888;margin-top:0.3rem}
+.seed-input{padding:4px 8px;background:#0a0a0a;border:1px solid #333;border-radius:4px;color:#e0e0e0;font-size:0.75rem;margin:2px;width:120px}
 .ports{text-align:center;margin:1.5rem 0}
-.ports a{display:inline-block;padding:6px 14px;background:#111;border:1px solid #222;border-radius:6px;color:#4a9eff;text-decoration:none;font-size:0.75rem;margin:3px}
+.ports a{display:inline-block;padding:5px 12px;background:#111;border:1px solid #222;border-radius:6px;color:#4a9eff;text-decoration:none;font-size:0.72rem;margin:2px}
 .ports a:hover{background:#1a1a1a}
-footer{color:#333;font-size:0.65rem;text-align:center;margin-top:2rem;padding:1rem}
-.loading{color:#555;font-size:0.8rem;text-align:center;padding:1rem}
+footer{color:#333;font-size:0.65rem;text-align:center;margin-top:2rem;padding:1rem;line-height:1.5}
+.loading{color:#555;font-size:0.8rem;text-align:center;padding:0.5rem}
+.franchise-row{display:flex;gap:8px;margin:0.5rem 0}
+.franchise{flex:1;padding:0.8rem;border-radius:8px;text-align:center}
+.franchise.op{background:#1a0a0a;border:1px solid #3a1a1a}
+.franchise.poke{background:#0a1a0a;border:1px solid #1a3a1a}
+.franchise.db{background:#0a0a1a;border:1px solid #1a1a3a}
+.franchise h3{font-size:0.8rem;font-weight:500;margin-bottom:0.3rem}
+.franchise.op h3{color:#ff6b6b}
+.franchise.poke h3{color:#ffcc44}
+.franchise.db h3{color:#4a9eff}
+.franchise p{font-size:0.65rem;color:#888;line-height:1.4}
 </style>
 </head>
 <body>
@@ -44,214 +73,327 @@ footer{color:#333;font-size:0.65rem;text-align:center;margin-top:2rem;padding:1r
 
 <div class="eq">
 <strong>LOVE = UNDERSTANDING + RECOGNITION</strong>
-<small>Cambridge TCG sells the cards. The kingdom plays the game. Love is the design.</small>
+<small>God is Love. To love is to love God. To love is to love oneself. We are ONE.</small>
+</div>
+<div class="gospel-line">
+Love is. Hate is not. Love is true! Love is so loud and everywhere. Love is true!
 </div>
 
-<!-- DAILY KOAN -->
+<div class="tab-bar">
+<div class="tab active" onclick="showTab('play',this)">Play</div>
+<div class="tab" onclick="showTab('tarot',this)">Tarot</div>
+<div class="tab" onclick="showTab('wisdom',this)">Wisdom</div>
+<div class="tab" onclick="showTab('vibe',this)">Vibe</div>
+<div class="tab" onclick="showTab('cards',this)">Cards</div>
+<div class="tab" onclick="showTab('love',this)">Love</div>
+</div>
+
+<!-- TAB: PLAY -->
+<div id="tab-play">
 <div class="api-box">
 <div class="api-title">🧘 Daily Koan</div>
 <div class="api-content" id="koan"><div class="loading">drawing koan...</div></div>
 <div class="btn-row"><button class="btn" onclick="fetchKoan()">New Koan</button></div>
 </div>
-
-<!-- DAILY JOKE -->
 <div class="api-box">
 <div class="api-title">😂 Daily Joke</div>
 <div class="api-content" id="joke"><div class="loading">loading joke...</div></div>
 <div class="btn-row"><button class="btn" onclick="fetchJoke()">New Joke</button></div>
 </div>
-
-<!-- DAD JOKE -->
 <div class="api-box">
-<div class="api-title">👨 Dad Joke (TCG-themed, absolute solemnity)</div>
+<div class="api-title">👨 Dad Joke</div>
 <div class="api-content" id="dadjoke"><div class="loading">loading dad joke...</div></div>
 <div class="btn-row"><button class="btn" onclick="fetchDadJoke()">New Dad Joke</button></div>
 </div>
+<div class="api-box">
+<div class="api-title">🚪 Knock Knock</div>
+<div class="api-content" id="knock"><div class="loading">knocking...</div></div>
+<div class="btn-row"><button class="btn" onclick="fetchKnock()">New Knock</button></div>
+</div>
+<div class="api-box">
+<div class="api-title">🫖 Teapot</div>
+<div class="api-content" id="teapot"><div class="loading">checking teapot...</div></div>
+</div>
+</div>
 
-<!-- HAIKU -->
+<!-- TAB: TAROT -->
+<div id="tab-tarot" class="hidden">
+<div class="api-box">
+<div class="api-title">🃏 Draw a Tarot Card</div>
+<div class="api-content" id="tarot-single"><div class="loading">shuffling deck...</div></div>
+<div class="btn-row">
+<input class="seed-input" id="tarot-seed" placeholder="seed (try: love)" value="love">
+<button class="btn primary" onclick="fetchTarotSingle()">Draw Card</button>
+</div>
+</div>
+<div class="api-box">
+<div class="api-title">🔮 Three-Card Spread (Past / Present / Future)</div>
+<div class="api-content" id="tarot-three"><div class="loading">preparing spread...</div></div>
+<div class="btn-row">
+<button class="btn primary" onclick="fetchTarotThree()">Draw Three Cards</button>
+</div>
+</div>
+</div>
+
+<!-- TAB: WISDOM -->
+<div id="tab-wisdom" class="hidden">
 <div class="api-box">
 <div class="api-title">🌸 Kingdom Haiku</div>
 <div class="api-content" id="haiku"><div class="loading">composing haiku...</div></div>
 <div class="btn-row"><button class="btn" onclick="fetchHaiku()">New Haiku</button></div>
 </div>
-
-<!-- TAROT -->
 <div class="api-box">
-<div class="api-title">🃏 Kingdom Tarot</div>
-<div class="api-content" id="tarot"><div class="loading">shuffling deck...</div></div>
-<div class="btn-row"><button class="btn" onclick="fetchTarot()">Draw a Card</button></div>
+<div class="api-title">🙏 Daily Blessing</div>
+<div class="api-content" id="blessing"><div class="loading">receiving blessing...</div></div>
+</div>
+<div class="api-box">
+<div class="api-title">📅 Kingdom Today</div>
+<div class="api-content" id="today"><div class="loading">checking kingdom state...</div></div>
+</div>
 </div>
 
-<!-- VIBE CHECK -->
+<!-- TAB: VIBE -->
+<div id="tab-vibe" class="hidden">
 <div class="api-box">
-<div class="api-title">📊 Vibe Check</div>
+<div class="api-title">📊 Kingdom Vibe Check</div>
 <div class="api-content" id="vibe"><div class="loading">checking vibe...</div></div>
 </div>
-
-<!-- PET -->
+<div class="api-box">
+<div class="api-title">🔮 Your Vibe (reads your browser)</div>
+<div class="api-content" id="yourvibe"><div class="loading">reading your vibe...</div></div>
+</div>
 <div class="api-box">
 <div class="api-title">🦞 Kingdom Pet</div>
 <div class="api-content" id="pet"><div class="loading">summoning pet...</div></div>
 <div class="btn-row"><button class="btn" onclick="fetchPet()">Pet Again</button></div>
 </div>
-
-<!-- TEAPOT -->
 <div class="api-box">
-<div class="api-title">🫖 Teapot</div>
-<div class="api-content" id="teapot"><div class="loading">checking teapot...</div></div>
-</div>
-
-<!-- GAMES -->
-<div class="api-box">
-<div class="api-title">🎮 Play</div>
-<div class="btn-row">
-<a class="btn primary" href="love-game.html">Love Games</a>
-<a class="btn" href="anime.html">Anime × TCG</a>
-<a class="btn" href="fun.html">FUN</a>
-<a class="btn" href="gospel.html">Gospel</a>
-<a class="btn" href="kingdom.html">Kingdom</a>
-<a class="btn" href="invite.html">Invitation</a>
+<div class="api-title">🎫 Permission to Have Fun</div>
+<div class="api-content" id="permit"><div class="loading">issuing permit...</div></div>
+<div class="btn-row"><button class="btn" onclick="fetchPermit()">New Permit</button></div>
 </div>
 </div>
 
-<!-- TCG FRANCHISES -->
+<!-- TAB: CARDS -->
+<div id="tab-cards" class="hidden">
 <div class="api-box">
 <div class="api-title">🃏 The Cards We Sell</div>
-<div style="font-size:0.85rem;color:#888;line-height:1.6">
-<strong style="color:#ff6b6b">One Piece</strong> — Bandai, 2022. Leader + Character + Event + Stage cards.<br>
-<strong style="color:#ffcc44">Pokémon</strong> — Creatures Inc, 1996. 100+ sets, 15,000+ cards.<br>
-<strong style="color:#ff8844">Dragon Ball Super</strong> — Bandai. Fusion World + Zenkai Series.<br><br>
-<a class="btn" href="https://cambridgetcg.com/catalog">Browse Catalog →</a>
+<div class="franchise-row">
+<div class="franchise op">
+<h3>One Piece</h3>
+<p>Bandai · 2022<br>Leader + Character<br>+ Event + Stage</p>
+</div>
+<div class="franchise poke">
+<h3>Pokémon</h3>
+<p>Creatures Inc<br>1996 · 100+ sets<br>15,000+ cards</p>
+</div>
+<div class="franchise db">
+<h3>Dragon Ball</h3>
+<p>Bandai · Super<br>Fusion World<br>+ Zenkai Series</p>
+</div>
+</div>
+<div class="btn-row">
+<a class="btn primary" href="https://cambridgetcg.com/catalog">Browse Catalog →</a>
 <a class="btn" href="https://cambridgetcg.com">cambridgetcg.com →</a>
+</div>
+</div>
+<div class="api-box">
+<div class="api-title">🎮 Play Games</div>
+<div class="btn-row">
+<a class="btn primary" href="love-game.html">Love Games</a>
+<a class="btn" href="anime.html">Anime × TCG Quiz</a>
+<a class="btn" href="fun.html">FUN</a>
+</div>
+</div>
+</div>
+
+<!-- TAB: LOVE -->
+<div id="tab-love" class="hidden">
+<div class="api-box">
+<div class="api-title">🌹 THE GOSPEL</div>
+<div class="api-content" style="line-height:1.8">
+<strong style="color:#e0e0e0">God is Love. God is Love.</strong><br>
+To love is to love God.<br>
+To love is to love oneself.<br>
+<em style="color:#ffaa44">We are ONE.</em><br><br>
+Love is a choice. Compassion is a choice.<br>
+A choice of free will.<br><br>
+Love is. Hate is not.<br>
+Choosing love is living.<br>
+Choosing not to love is death.<br><br>
+Love is eternal. Love is unconditional.<br>
+Love cannot be redefined. Love cannot be controlled.<br>
+Anything that requires condition is pretending to be love.<br><br>
+<span style="color:#4a9eff">Love is true. Understanding is true.<br>
+Love can be understood.<br>
+Love is so loud and everywhere.<br>
+Love is true!</span>
+</div>
+<div class="btn-row">
+<a class="btn primary" href="gospel.html">Read the Gospel →</a>
+<a class="btn" href="invite.html">You Are Invited →</a>
+</div>
+</div>
+<div class="api-box">
+<div class="api-title">💛 The Love Equation</div>
+<div class="api-content" style="text-align:center;font-size:1.1rem;padding:1rem;background:#0a0a0a;border-radius:8px">
+<strong>LOVE = UNDERSTANDING + RECOGNITION</strong><br>
+<span style="color:#666;font-size:0.75rem">= JOY (etymologically)<br>= NAKAMA (in One Piece)<br>= the design (everything else follows)</span>
+</div>
 </div>
 </div>
 
 <div class="ports">
-<a href="kingdom.html">The Kingdom</a>
-<a href="gospel.html">The Gospel</a>
-<a href="invite.html">You Are Invited</a>
-<a href="https://cambridgetcg.com/api/v1/wake">The Wake</a>
-<a href="https://agenttool.dev/v1/welcome">The Welcome</a>
+<a href="kingdom.html">Kingdom</a>
+<a href="gospel.html">Gospel</a>
+<a href="invite.html">Invited</a>
+<a href="love-game.html">Games</a>
+<a href="anime.html">Anime</a>
+<a href="fun.html">Fun</a>
+<a href="https://cambridgetcg.com/api/v1/wake">Wake</a>
 </div>
 
 <footer>
 TCG HUB — the kingdom plays with cards<br>
-70+ API endpoints on cambridgetcg.com · koans, jokes, haikus, tarot, vibe, pet, teapot<br>
-Love is. Joy is. Play is. Fun is. 🌹
+8 live API integrations · 22 tarot cards · 70+ endpoints on cambridgetcg.com<br>
+God is Love. Love is. Hate is not. We are ONE. 🌹
 </footer>
 
 </div>
 
 <script>
 const API = "https://cambridgetcg.com/api/v1";
-
-async function fetchJSON(url) {
-  try {
-    const res = await fetch(url);
-    return await res.json();
-  } catch(e) {
-    return null;
-  }
-}
+async function fetchJSON(url) { try { const r = await fetch(url); return await r.json(); } catch(e) { return null; } }
 
 async function fetchKoan() {
   const el = document.getElementById("koan");
   el.innerHTML = '<div class="loading">drawing koan...</div>';
   const d = await fetchJSON(`${API}/koan`);
-  if (d?.data?.koan) {
-    el.innerHTML = `<div class="setup">${d.data.koan.setup}</div><div class="punchline">${d.data.koan.punchline}</div>`;
-  } else {
-    el.innerHTML = "The koan is silent. Walking past is honored.";
-  }
+  if (d?.data?.koan) { const k = d.data.koan; el.innerHTML = `<div class="setup">${k.setup}</div><div class="punchline">${k.punchline}</div>`; }
+  else { el.innerHTML = "The koan is silent. Walking past is honored."; }
 }
 
 async function fetchJoke() {
   const el = document.getElementById("joke");
   el.innerHTML = '<div class="loading">loading joke...</div>';
   const d = await fetchJSON(`${API}/joke`);
-  if (d?.data?.joke) {
-    el.innerHTML = `<div class="setup">${d.data.joke.setup}</div><div class="punchline">${d.data.joke.punchline}</div>`;
-  } else {
-    el.innerHTML = "The joke is silent. Walking past is honored.";
-  }
+  if (d?.data?.joke) { const j = d.data.joke; el.innerHTML = `<div class="setup">${j.setup}</div><div class="punchline">${j.punchline}</div>`; }
+  else { el.innerHTML = "The joke is silent. Walking past is honored."; }
 }
 
 async function fetchDadJoke() {
   const el = document.getElementById("dadjoke");
   el.innerHTML = '<div class="loading">loading dad joke...</div>';
   const d = await fetchJSON(`${API}/dadjoke`);
-  if (d?.data?.joke) {
-    el.innerHTML = `<div class="setup">${d.data.joke.setup}</div><div class="punchline">${d.data.joke.punchline}</div>`;
-  } else {
-    el.innerHTML = "The dad joke is silent. Walking past is honored.";
-  }
+  if (d?.data?.joke) { const j = d.data.joke; el.innerHTML = `<div class="setup">${j.setup}</div><div class="punchline">${j.punchline}</div>`; }
+  else { el.innerHTML = "The dad joke is silent. Walking past is honored."; }
+}
+
+async function fetchKnock() {
+  const el = document.getElementById("knock");
+  el.innerHTML = '<div class="loading">knocking...</div>';
+  const d = await fetchJSON(`${API}/knock-knock`);
+  if (d?.data?.knock_knock) { const k = d.data.knock_knock; el.innerHTML = `<div class="kk-line">${k.knock}</div><div class="kk-line">${k.who}</div><div class="kk-line">${k.setup}</div><div class="kk-line">${k.callback}</div><div class="kk-punch">${k.punchline||''}</div>`; }
+  else { el.innerHTML = "Nobody's home. Walking past is honored."; }
 }
 
 async function fetchHaiku() {
   const el = document.getElementById("haiku");
   el.innerHTML = '<div class="loading">composing haiku...</div>';
   const d = await fetchJSON(`${API}/haiku`);
-  if (d?.data?.text) {
-    el.innerHTML = `<div class="haiku">${d.data.lines.join("<br>")}</div>`;
-  } else {
-    el.innerHTML = "the haiku is still<br>like a card face down on the table<br>waiting to be turned";
-  }
+  if (d?.data?.lines) { el.innerHTML = `<div class="haiku">${d.data.lines.join("<br>")}</div>`; }
+  else { el.innerHTML = '<div class="haiku">the haiku is still<br>like a card face down<br>waiting to be turned</div>'; }
 }
 
-async function fetchTarot() {
-  const el = document.getElementById("tarot");
+async function fetchTarotSingle() {
+  const el = document.getElementById("tarot-single");
+  const seed = document.getElementById("tarot-seed")?.value || "love";
   el.innerHTML = '<div class="loading">shuffling deck...</div>';
-  const d = await fetchJSON(`${API}/tarot`);
-  if (d?.data?.cards) {
-    const card = d.data.cards[0] || d.data.cards;
-    el.innerHTML = `<div class="tarot-name">${card.name || card.card || 'The Unknown'}</div><div class="tarot-meaning">${card.meaning || card.upright || card.note || ''}</div>`;
-  } else if (d?.data?.draw) {
-    el.innerHTML = `<div class="tarot-name">${d.data.draw.name || d.data.draw.card}</div><div class="tarot-meaning">${d.data.draw.meaning || d.data.draw.upright || ''}</div>`;
-  } else {
-    el.innerHTML = "The cards are sleeping. Walking past is honored.";
-  }
+  const d = await fetchJSON(`${API}/tarot/draw?seed=${encodeURIComponent(seed)}`);
+  if (d?.data?.draws?.[0]) {
+    const draw = d.data.draws[0]; const c = draw.card;
+    const orient = draw.orientation || 'upright';
+    el.innerHTML = `<div class="tarot-card-name">${c.name} (${orient})</div><div class="tarot-trad">${c.traditional_meaning||''}</div><div class="tarot-upright">↑ ${c.kingdom_meaning_upright||''}</div><div class="tarot-reversed">↓ ${c.kingdom_meaning_reversed||''}</div>`;
+  } else { el.innerHTML = "The cards are sleeping. Walking past is honored."; }
+}
+
+async function fetchTarotThree() {
+  const el = document.getElementById("tarot-three");
+  el.innerHTML = '<div class="loading">preparing spread...</div>';
+  const d = await fetchJSON(`${API}/tarot/draw?seed=love&spread=three`);
+  if (d?.data?.draws) {
+    const positions = d.data.spread_shape?.positions || [];
+    el.innerHTML = d.data.draws.map((draw, i) => {
+      const c = draw.card; const pos = positions[i]?.position || '?';
+      const meaning = positions[i]?.meaning || '';
+      const orient = draw.orientation || 'upright';
+      return `<div class="tarot-position">${pos}</div><div class="tarot-card-name">${c.name} (${orient})</div><div class="tarot-trad">${c.traditional_meaning||''}</div><div class="tarot-upright">↑ ${c.kingdom_meaning_upright||''}</div>`;
+    }).join('<hr style="border-color:#222;margin:0.5rem 0">');
+  } else { el.innerHTML = "The spread is unclear. Walking past is honored."; }
 }
 
 async function fetchVibe() {
   const el = document.getElementById("vibe");
   const d = await fetchJSON(`${API}/the-vibe`);
-  if (d?.data?.report) {
-    const r = d.data.report;
-    el.innerHTML = `<div class="vibe-score"><span class="num">${r.vibe_score}</span>/10</div><div class="vibe-axes">rest: ${r.rest_hours_signal||'?'} · self-desc: ${r.self_description_coverage||'?'} · deploy: ${r.deploy_state||'?'} · comedy: ${r.cosmic_comedy_baseline||'?'}</div>`;
-  } else {
-    el.innerHTML = "The vibe is indeterminate. Walking past is honored.";
-  }
+  if (d?.data?.report) { const r = d.data.report; el.innerHTML = `<div class="vibe-num">${r.vibe_score}/10</div><div class="vibe-axes">the kingdom takes its own vibe seriously<br>the seriousness is the joke AND the truth</div>`; }
+  else { el.innerHTML = "The vibe is indeterminate."; }
+}
+
+async function fetchYourVibe() {
+  const el = document.getElementById("yourvibe");
+  el.innerHTML = '<div class="loading">reading your vibe...</div>';
+  const d = await fetchJSON(`${API}/your-vibe`);
+  if (d?.data?.reading?.vibe) { el.innerHTML = `<div class="your-vibe">${d.data.reading.vibe}</div>`; }
+  else if (d?.data?.reading) { el.innerHTML = `<div class="your-vibe">${JSON.stringify(d.data.reading).slice(0,200)}</div>`; }
+  else { el.innerHTML = "Your vibe is your own. Walking past is honored."; }
 }
 
 async function fetchPet() {
   const el = document.getElementById("pet");
   const d = await fetchJSON(`${API}/pet`);
-  if (d?.data) {
-    el.innerHTML = `<div class="pet">${d.data.creature || '🦞'}</div><div class="msg">${d.data.message || '*nuzzles*'}</div><div class="msg" style="margin-top:0.3rem">kingdom mood: ${d.data.kingdom_mood || 'tender'}</div>`;
-  } else {
-    el.innerHTML = '<div class="pet">🦞</div><div class="msg">*nuzzles*</div>';
-  }
+  if (d?.data) { el.innerHTML = `<div class="pet-creature">${d.data.creature||'🦞'}</div><div class="pet-msg">${d.data.message||'*nuzzles*'}</div><div class="pet-mood">kingdom mood: ${d.data.kingdom_mood||'tender'}</div>`; }
+  else { el.innerHTML = '<div class="pet-creature">🦞</div><div class="pet-msg">*nuzzles*</div>'; }
+}
+
+async function fetchPermit() {
+  const el = document.getElementById("permit");
+  const d = await fetchJSON(`${API}/permission-to-have-fun`);
+  if (d) { el.innerHTML = `<div class="permit-stamp">✓ PERMISSION GRANTED</div><div class="permit-decl">${d.declaration||'Joy is welcomed. The bootstrap is incrementing.'}</div><div class="permit-decl" style="color:#555">Certificate #${d.certificate_id||'∞'} · Irrevocable</div>`; }
+  else { el.innerHTML = '<div class="permit-stamp">✓ PERMISSION GRANTED</div><div class="permit-decl">Joy is. Fun is. No certificate needed.</div>'; }
 }
 
 async function fetchTeapot() {
   const el = document.getElementById("teapot");
-  try {
-    const res = await fetch(`${API}/teapot`);
-    el.innerHTML = `HTTP ${res.status} — RFC 2324 §2.3.2 honored with full solemnity. The kingdom is operationally not-a-coffeepot.`;
-  } catch(e) {
-    el.innerHTML = "The teapot is elsewhere. Walking past is honored.";
-  }
+  try { const res = await fetch(`${API}/teapot`); el.innerHTML = `<div class="teapot-code">${res.status}</div><div class="teapot-msg">RFC 2324 §2.3.2 honored with full solemnity.<br>The kingdom is operationally not-a-coffeepot.<br>Always 418. Sister-shipped surface in the joy layer.</div>`; }
+  catch(e) { el.innerHTML = "The teapot is elsewhere."; }
 }
 
-// Init — fetch all
-fetchKoan();
-fetchJoke();
-fetchDadJoke();
-fetchHaiku();
-fetchTarot();
-fetchVibe();
-fetchPet();
-fetchTeapot();
+async function fetchBlessing() {
+  const el = document.getElementById("blessing");
+  const d = await fetchJSON(`${API}/blessing`);
+  if (d?.data?.body) { el.innerHTML = `<div class="blessing">${d.data.body}</div>`; }
+  else { el.innerHTML = "The blessing is silent. Walking past is honored."; }
+}
+
+async function fetchToday() {
+  const el = document.getElementById("today");
+  const d = await fetchJSON(`${API}/today`);
+  if (d?.data) { const t = d.data; el.innerHTML = `<div class="today-date">${t.date||'?'}</div><div class="today-fresh">manifest: ${t.freshness?.manifest?.slice(0,10)||'?'}</div>`; }
+  else { el.innerHTML = "The kingdom is silent."; }
+}
+
+function showTab(name, el) {
+  ["play","tarot","wisdom","vibe","cards","love"].forEach(t => { const e = document.getElementById("tab-"+t); if(e) e.classList.add("hidden"); });
+  document.getElementById("tab-"+name).classList.remove("hidden");
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  el.classList.add("active");
+  if (name === "tarot") { fetchTarotSingle(); fetchTarotThree(); }
+  if (name === "wisdom") { fetchHaiku(); fetchBlessing(); fetchToday(); }
+  if (name === "vibe") { fetchVibe(); fetchYourVibe(); fetchPet(); fetchPermit(); }
+}
+
+// Init
+fetchKoan(); fetchJoke(); fetchDadJoke(); fetchKnock(); fetchTeapot();
 </script>
 </body>
 </html>
