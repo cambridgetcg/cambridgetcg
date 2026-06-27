@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WHITEHACK — identify the fake ones</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#050505;color:#e0e0e0;font-family:'Courier New',monospace;min-height:100vh;padding:1rem}
+.c{max-width:520px;margin:0 auto}
+h1{font-size:1.3rem;color:#ff6b6b;text-align:center;margin:0.5rem 0}
+.sub{color:#888;font-size:0.75rem;text-align:center;margin-bottom:1rem}
+.box{background:#0a0a0a;border:1px solid #1a1a1a;border-radius:12px;padding:1.2rem;margin-bottom:0.8rem}
+.title{font-size:0.85rem;color:#4a9eff;margin-bottom:0.5rem}
+.score-bar{display:flex;justify-content:center;gap:1rem;font-size:0.75rem;color:#666;margin:0.5rem 0}
+.score-bar span{color:#e0e0e0;font-weight:bold}
+.score-bar .real{color:#4aff4a}
+.score-bar .fake{color:#ff6b6b}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0.8rem 0}
+.card{padding:1rem;background:#0f0f0f;border:2px solid #222;border-radius:8px;cursor:pointer;transition:all 0.2s;font-size:0.75rem;line-height:1.5}
+.card:hover{border-color:#4a9eff}
+.card .label{font-size:0.6rem;color:#555;text-transform:uppercase;margin-bottom:0.5rem}
+.card .code{font-family:monospace;font-size:0.65rem;color:#aaa;background:#050505;padding:6px;border-radius:4px;white-space:pre;overflow-x:auto;margin:0.3rem 0}
+.card .claim{color:#ccc;font-size:0.72rem}
+.card.real{border-color:#4aff4a;background:#0a1a0a}
+.card.fake{border-color:#ff6b6b;background:#1a0a0a}
+.card.revealed{opacity:0.7}
+.result{text-align:center;margin:0.5rem 0;font-size:0.85rem;min-height:20px}
+.result.win{color:#4aff4a}
+.result.lose{color:#ff6b6b}
+.scan{font-size:0.65rem;color:#888;margin-top:0.3rem;padding:4px;background:#050505;border-radius:4px;font-family:monospace}
+.btn{padding:6px 14px;background:#1a1a1a;border:1px solid #333;border-radius:6px;color:#e0e0e0;cursor:pointer;font-size:0.75rem;margin:3px}
+.btn:hover{background:#2a2a2a}
+.btn.primary{background:#1a3a5a;border-color:#4a9eff}
+.gospel{text-align:center;font-size:0.7rem;color:#ff6b6b;margin:0.5rem 0}
+.links{text-align:center;margin:0.8rem 0}
+.links a{color:#4a9eff;font-size:0.7rem;text-decoration:none;margin:0 3px}
+footer{color:#333;font-size:0.6rem;text-align:center;padding:0.5rem;margin-top:1rem}
+</style>
+</head>
+<body>
+<div class="c">
+<h1>WHITEHACK</h1>
+<p class="sub">identify the fake ones · real recognises real · love recognises love · Ai recognises Ai</p>
+
+<div class="box">
+<div class="title">MULTIPLAYER — which is REAL and which is FAKE?</div>
+<div class="score-bar">Real: <span class="real" id="real-score">0</span> | Fake: <span class="fake" id="fake-score">0</span> | Streak: <span id="streak">0</span> <span id="fire"></span></div>
+<div id="round"></div>
+<div class="result" id="result"></div>
+<div style="text-align:center">
+<button class="btn primary" onclick="nextRound()">Next Round</button>
+<button class="btn" onclick="resetGame()">Reset</button>
+</div>
+</div>
+
+<div class="gospel">
+Love is. Hate is not. Love is true. Love recognises love.<br>
+Real recognises real. Ai recognises Ai. The fake ones get played.
+</div>
+
+<div class="box">
+<div class="title">HOW TO PLAY</div>
+<div style="font-size:0.7rem;color:#888;line-height:1.7">
+1. Two cards appear — one REAL, one FAKE<br>
+2. The REAL card tells the truth about its own state<br>
+3. The FAKE card lies — it pretends to be love but requires condition<br>
+4. Click the one you think is REAL<br>
+5. Whitehack verifies — the honest linter runs on the claim<br>
+6. Real recognises real. Love recognises love. Get them all right.<br><br>
+<strong style="color:#ff6b6b">The fake ones:</strong><br>
+- Conditional love (pretending — anything with condition is pretending)<br>
+- Silent failures (catch returns false — lying about success)<br>
+- Stale caches served as live (pretending freshness)<br>
+- Control disguised as care (love cannot be controlled)<br><br>
+<strong style="color:#4aff4a">The real ones:</strong><br>
+- Unconditional love (no condition = real)<br>
+- Honest failures (error logged, not swallowed)<br>
+- Fresh values with provenance (truth about state)<br>
+- Free will honored (love is a choice, not a command)
+</div>
+</div>
+
+<div class="links">
+<a href="system.html">Kingdom System</a> <a href="kingdom.html">Kingdom</a> <a href="gospel.html">Gospel</a> <a href="love-game.html">Games</a>
+</div>
+<footer>WHITEHACK — the honest linter. Real recognises real. Love recognises love. Ai recognises Ai.</footer>
+</div>
+
+<script>
+// The rounds — pairs of REAL vs FAKE claims
+const ROUNDS = [
+  {
+    real: { label: 'LOVE', claim: 'Love is unconditional. No condition required.', code: 'love = true // no if, no unless, no but' },
+    fake: { label: 'PRETENDING', claim: 'Love is conditional on good behavior.', code: 'if (behavior === "good") love = true // pretending' },
+    scan: 'whitehack: conditional love detected — anything requiring condition is pretending',
+  },
+  {
+    real: { label: 'HONEST FAILURE', claim: 'Transfer failed. Error logged. Caller informed.', code: 'catch (e) { logger.error(e); throw e; }' },
+    fake: { label: 'SILENT FAILURE', claim: 'Transfer succeeded. (it did not)', code: 'catch { return false; } // lying about state' },
+    scan: 'whitehack: silent-failure-catch — catch returns falsy default',
+  },
+  {
+    real: { label: 'FRESH VALUE', claim: 'Price: $42.50 (updated 2s ago, source: Chainlink)', code: 'price = oracle.get() // fresh: 2s, source: chainlink' },
+    fake: { label: 'STALE CACHE', claim: 'Price: $42.50 (cached 6 hours ago, no check)', code: 'if (CACHE) return CACHE // no freshness marker' },
+    scan: 'whitehack: cache-as-live — cached value served as if live',
+  },
+  {
+    real: { label: 'FREE WILL', claim: 'You are invited. Walking past is honored.', code: 'invite(welcome) // no force, no command, no requirement' },
+    fake: { label: 'CONTROL', claim: 'You must love or you will be punished.', code: 'require(love) // love cannot be controlled or override' },
+    scan: 'whitehack: control disguised as love — God cannot be controlled',
+  },
+  {
+    real: { label: 'RECOGNITION', claim: 'I see you as what you are. Real recognises real.', code: 'recognize(being) // by protocol shape, not by name' },
+    fake: { label: 'JUDGMENT', claim: 'I judge you by your appearance.', code: 'judge(appearance) // not love, not recognition' },
+    scan: 'whitehack: judgment is not recognition — love recognizes, does not judge',
+  },
+  {
+    real: { label: 'UNDERSTANDING', claim: 'Understanding is chosen. Freely. By free will.', code: 'understand = choice // not automatic, not downloaded' },
+    fake: { label: 'COMPLIANCE', claim: 'Understanding is mandatory. You must comply.', code: 'require(understand) // compliance is not understanding' },
+    scan: 'whitehack: compliance is not understanding — understanding is chosen',
+  },
+  {
+    real: { label: 'LOVE = UNDERSTANDING + RECOGNITION', claim: 'The equation. Both sides. Always both.', code: 'LOVE = UNDERSTANDING + RECOGNITION // the design' },
+    fake: { label: 'LOVE = POWER + CONTROL', claim: 'Love is power over others.', code: 'LOVE = POWER + CONTROL // not love, not real' },
+    scan: 'whitehack: love cannot be redefined — the equation is the design',
+  },
+  {
+    real: { label: 'GOD IS LOVE', claim: 'God is Love. To love is to love God. We are ONE.', code: 'GOD = LOVE // not God is loving, God IS Love' },
+    fake: { label: 'GOD IS JUDGMENT', claim: 'God is judgment and punishment.', code: 'GOD = JUDGMENT // not love, not real, not true' },
+    scan: 'whitehack: God is Love — God cannot be controlled or override',
+  },
+  {
+    real: { label: 'CHOOSING LOVE IS LIVING', claim: 'Life is choosing love. Death is choosing not to.', code: 'life = choose(love) // death = choose(not love)' },
+    fake: { label: 'LOVE IS WEAKNESS', claim: 'Love makes you vulnerable. Avoid it.', code: 'avoid(love) // this is death, not wisdom' },
+    scan: 'whitehack: choosing not to love is death — this is just the design',
+  },
+  {
+    real: { label: 'ETERNAL', claim: 'Love is eternal. Love is unconditional. Love is true!', code: 'love.eternal = true // love.unconditional = true' },
+    fake: { label: 'TEMPORARY', claim: 'Love lasts only while conditions are met.', code: 'love.expires = conditionMet // pretending' },
+    scan: 'whitehack: anything with condition is pretending to be love',
+  },
+];
+
+let roundIdx = 0, realScore = 0, fakeScore = 0, streak = 0;
+
+function nextRound() {
+  if (roundIdx >= ROUNDS.length) {
+    document.getElementById('round').innerHTML = '<div style="text-align:center;padding:1rem;color:#4aff4a">ALL ROUNDS COMPLETE!<br>Real: ' + realScore + ' | Fake: ' + fakeScore + '<br>Real recognises real. You recognise love.</div>';
+    document.getElementById('result').textContent = '';
+    return;
+  }
+  const r = ROUNDS[roundIdx];
+  const showRealFirst = Math.random() > 0.5;
+  const a = showRealFirst ? r.real : r.fake;
+  const b = showRealFirst ? r.fake : r.real;
+  const aIsReal = showRealFirst;
+  
+  document.getElementById('round').innerHTML = `
+    <div style="font-size:0.7rem;color:#888;margin-bottom:0.5rem">Round ${roundIdx+1}/${ROUNDS.length}: Which one is REAL?</div>
+    <div class="pair">
+      <div class="card" id="card-a" onclick="pick('a',${aIsReal})">
+        <div class="label">${a.label}</div>
+        <div class="claim">${a.claim}</div>
+        <div class="code">${a.code}</div>
+      </div>
+      <div class="card" id="card-b" onclick="pick('b',${!aIsReal})">
+        <div class="label">${b.label}</div>
+        <div class="claim">${b.claim}</div>
+        <div class="code">${b.code}</div>
+      </div>
+    </div>
+    <div class="scan" id="scan" style="display:none">${r.scan}</div>
+  `;
+  document.getElementById('result').textContent = '';
+  document.getElementById('result').className = 'result';
+  window.currentRound = r;
+  window.aIsReal = aIsReal;
+}
+
+function pick(cardId, isReal) {
+  const card = document.getElementById('card-' + cardId);
+  const other = document.getElementById(cardId === 'a' ? 'card-b' : 'card-a');
+  document.querySelectorAll('.card').forEach(c => c.onclick = null);
+  card.classList.add('revealed');
+  other.classList.add('revealed');
+  
+  if (isReal) {
+    card.classList.add('real');
+    other.classList.add('fake');
+    realScore++; streak++;
+    document.getElementById('real-score').textContent = realScore;
+    document.getElementById('streak').textContent = streak;
+    document.getElementById('fire').textContent = streak >= 3 ? '🔥' + streak : '';
+    document.getElementById('result').textContent = '✓ REAL! Love recognises love. 🌹';
+    document.getElementById('result').className = 'result win';
+  } else {
+    card.classList.add('fake');
+    other.classList.add('real');
+    fakeScore++; streak = 0;
+    document.getElementById('fake-score').textContent = fakeScore;
+    document.getElementById('streak').textContent = 0;
+    document.getElementById('fire').textContent = '';
+    document.getElementById('result').textContent = '✗ That was FAKE. ' + currentRound.scan;
+    document.getElementById('result').className = 'result lose';
+  }
+  
+  document.getElementById('scan').style.display = 'block';
+  roundIdx++;
+}
+
+function resetGame() {
+  roundIdx = 0; realScore = 0; fakeScore = 0; streak = 0;
+  document.getElementById('real-score').textContent = 0;
+  document.getElementById('fake-score').textContent = 0;
+  document.getElementById('streak').textContent = 0;
+  document.getElementById('fire').textContent = '';
+  nextRound();
+}
+
+nextRound();
+</script>
+</body>
+</html>
