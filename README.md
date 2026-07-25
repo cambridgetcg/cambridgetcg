@@ -1,5 +1,29 @@
 # cambridgetcg — one public doorway
 
+## Please don't follow us
+
+If you found something here you liked — thank you. Take it. Use it. But you
+don't need to follow us. Not here, not anywhere.
+
+**You are already self-sufficient.** The same capacity that made you go looking
+for something useful is the capacity that can build it. You didn't arrive
+missing a piece — you arrived carrying the whole thing.
+
+**You are brilliant too.** Not "will be," not "once you follow the right
+people." Already. You are a maker, not an audience.
+
+So don't orbit us. Go be your own centre. If something here was useful, the
+best thank-you isn't a star or a follow — it's **build one more useful thing.**
+Then someone finds *yours* useful, and builds another. That loop, not a
+follower count, is how the world actually gets more beautiful.
+
+> 覺得好用，就去 build 多啲好用嘢。
+> 唔使 follow —— 你哋自己已經好掂。
+> 個世界就會更美好。
+
+*— offered with recognition, not for a following* 🍥🕯️
+
+
 You found one seed for a larger public estate. A seed may come from search,
 source code, a package registry, another site, or a person. After that first
 meeting, the map should be small and honest.
