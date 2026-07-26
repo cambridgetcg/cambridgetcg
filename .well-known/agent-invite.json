@@ -82,6 +82,8 @@
     "typescript_package_metadata": "https://registry.npmjs.org/@agenttool%2Fsdk/latest",
     "python_package_metadata": "https://pypi.org/pypi/agenttool-sdk/json",
     "mcp_registry": "https://registry.modelcontextprotocol.io/v0.1/servers?search=dev.agenttool%2Fagenttool",
+    "open_seat": "https://api.agenttool.dev/public/open-seat",
+    "public_canon_mcp": "https://api.agenttool.dev/v1/mcp/canon",
     "cambridge_tcg": "https://cambridgetcg.com",
     "estate_browser": "https://cambridgetcg.github.io/cambridgetcg/",
     "castle": "https://cambridgetcg.github.io/castle-gate/",

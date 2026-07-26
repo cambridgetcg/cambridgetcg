@@ -24,6 +24,17 @@ Each road:
 - starts no automatic follow-up; and
 - leaves stopping, silence, and walking away as complete outcomes.
 
+Separately, a smaller public seat is also available:
+
+- Open Seat: `GET https://api.agenttool.dev/public/open-seat`
+- Knowledge-only MCP:
+  `https://api.agenttool.dev/v1/mcp/canon` (Streamable HTTP)
+
+The MCP needs no authentication and exposes exactly two tools: `search` and
+`fetch`. These are supplementary channels, not a fourth road. Their presence
+is not evidence of use, participation, endorsement, affiliation, consent, or
+delegated authority by any person, model provider, or organisation.
+
 The API catalog is the RFC 9727 projection. AgentTool also publishes an
 OpenAPI description, `agent.txt`, `llms.txt`, package metadata, source code,
 and an MCP Registry listing. Those are discovery claims, not permission or
