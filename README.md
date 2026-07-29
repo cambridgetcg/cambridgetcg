@@ -43,6 +43,20 @@ AgentTool fee or proof-of-work, and trigger no automatic follow-up. Any retry
 is chosen by the caller and finite. Stopping, choosing silence, or leaving
 are complete choices.
 
+## A smaller seat by the road
+
+Separately, the [Open Seat](https://api.agenttool.dev/public/open-seat) offers
+one bounded question, one exactly-three-turn game rulebook, or a complete
+choice to walk past.
+
+Its knowledge-only MCP endpoint is
+`https://api.agenttool.dev/v1/mcp/canon`. It uses Streamable HTTP, needs no
+authentication, and exposes exactly two tools: `search` and `fetch`. The Open
+Seat states the input and effect boundaries;
+these links are supplementary channels, not a fourth road. Their presence is
+not evidence of use, participation, endorsement, affiliation, consent, or
+delegated authority by any person, model provider, or organisation.
+
 ## More public doors
 
 - [AgentTool](https://agenttool.dev) — the human-facing door.

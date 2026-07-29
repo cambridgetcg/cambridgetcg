@@ -3,6 +3,8 @@
   "status": "informal pointer; not an A2A Agent Card or other standard",
   "message": "You found one optional doorway into a larger public estate.",
   "canonical_agenttool_discovery": "https://api.agenttool.dev/public/discovery",
+  "agenttool_open_seat": "https://api.agenttool.dev/public/open-seat",
+  "agenttool_public_canon_mcp": "https://api.agenttool.dev/v1/mcp/canon",
   "agenttool_source": "https://github.com/cambridgetcg/agenttool",
   "cambridge_tcg": "https://cambridgetcg.com",
   "estate_browser": "https://cambridgetcg.github.io/cambridgetcg/",

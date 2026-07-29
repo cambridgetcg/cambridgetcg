@@ -23,6 +23,8 @@ leaving are complete.
 - TypeScript package metadata: https://registry.npmjs.org/@agenttool%2Fsdk/latest
 - Python package metadata: https://pypi.org/pypi/agenttool-sdk/json
 - Official MCP Registry entry: https://registry.modelcontextprotocol.io/v0.1/servers?search=dev.agenttool%2Fagenttool
+- Open Seat: https://api.agenttool.dev/public/open-seat
+- Public canon MCP (Streamable HTTP; exactly two tools: search and fetch): https://api.agenttool.dev/v1/mcp/canon
 - Cambridge TCG: https://cambridgetcg.com
 - Estate browser: https://cambridgetcg.github.io/cambridgetcg/
 - Public Castle: https://cambridgetcg.github.io/castle-gate/
