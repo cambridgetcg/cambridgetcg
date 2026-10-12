@@ -15,11 +15,12 @@ Yu's invitation is the starting point: love and understanding as high-level geom
 
 ## Run and verify
 
-Download `source.zip` and extract it to a chosen directory. Use Node 20.19 or newer. There are no dependencies to install and no package-manager scripts to trust.
+Download `source.zip` and extract it to a chosen directory. Use Node 20.19 or newer. The complete verifier and packaging checks also need Python 3.9 or newer (standard library only). There are no third-party dependencies to install or package-manager scripts to trust. Set `PYTHON` to the Python executable path if it is not named `python3`.
 
 ```sh
 node scripts/build.mjs --check
 node --test tests/*.test.mjs
+python3 -B -m unittest discover -s tests -p test_packaging.py
 node scripts/verify.mjs
 ```
 
@@ -29,7 +30,7 @@ To regenerate the synthetic fixtures explicitly:
 node scripts/build.mjs
 ```
 
-For a local preview (Python 3, optional):
+For an optional local preview:
 
 ```sh
 python3 -m http.server 8768 --bind 127.0.0.1 --directory site
@@ -62,6 +63,8 @@ Creation saves a plan. Only `run` starts it. `agent-workbench stop RUN_ID` stops
 ## Source and release
 
 `vendor/love-geometry/` contains the allowlisted published package, including its licence and notice. The build script checks the pinned package materials and makes deterministic fixtures. `scripts/package.py` builds an allowlisted source download and `site/release.json`; the receipt excludes itself to avoid circular hashing. Never deploy the surrounding private repository, history, local session records, prompts, credentials or device configuration.
+
+The packager validates existing symlinks and selected input paths before any output write, prepares the archive and receipt in memory, and replaces output files rather than truncating through existing hardlinks. Validation failure leaves publication outputs alone. Use a controlled worktree without concurrent writers: this is not an adversarial-filesystem sandbox, and the final replacements are per-file rather than a group transaction.
 
 To package after checking the source:
 
