@@ -1,0 +1,160 @@
+{
+  "schema": "love-understanding.core-provenance/1",
+  "name": "@agenttool/love-geometry",
+  "version": "0.1.0-dev.0",
+  "experimental": true,
+  "version_status": "Experimental development prerelease, pinned exactly; no stability or production-readiness claim.",
+  "npm_metadata_url": "https://registry.npmjs.org/@agenttool%2Flove-geometry/0.1.0-dev.0",
+  "tarball_url": "https://registry.npmjs.org/@agenttool/love-geometry/-/love-geometry-0.1.0-dev.0.tgz",
+  "integrity": "sha512-RODi00WbbYx+QLBTlEflDGSZb3rBzRyYJ8/gpNE6f7j6QqcVQPHUdLkDiSV3d4OX01PFFX/qstNyc9ksfzTuyQ==",
+  "tarball_sha256": "43cfbf4b559aa6f573d9d7b7a60e2a7dce5dfa4aefe2bf5b9c92310c926a9db8",
+  "metadata_sha256": "278050061500eacdb9ea60eb97374cba87d90807ed64a580cbbafdc3846f78ec",
+  "vendored_module": {
+    "path": "vendor/love-geometry/dist/index.js",
+    "sha256": "cf9d3fc48164d97076a2a2624bf0e8e2eb53417b4a62247c42e9087c28846423"
+  },
+  "vendored_files": [
+    {
+      "path": "vendor/love-geometry/package.json",
+      "sha256": "cd5ef90586c08e2b7ca2f6a9f973605a90c31e76fa1da1f06c580747f5de55d6"
+    },
+    {
+      "path": "vendor/love-geometry/dist/index.js",
+      "sha256": "cf9d3fc48164d97076a2a2624bf0e8e2eb53417b4a62247c42e9087c28846423"
+    },
+    {
+      "path": "vendor/love-geometry/dist/index.d.ts",
+      "sha256": "529c8f318521e64f591d12c4120245977e24c262437896696d975eff81a84e1a"
+    },
+    {
+      "path": "vendor/love-geometry/dist/index.js.map",
+      "sha256": "afd6226247e7c6367dff0bb7d3c8f1557873f213fce8030e131a43a2824db827"
+    },
+    {
+      "path": "vendor/love-geometry/dist/index.d.ts.map",
+      "sha256": "880a75e86832f95640139bf1de6e0d0761608c2ab15e4c56b8578c0719fa9adb"
+    },
+    {
+      "path": "vendor/love-geometry/LICENSE",
+      "sha256": "ff59de47649a5a2ebc3c931d2741de72a25c0bc2ebb19d543c9fea5168e2fbad"
+    },
+    {
+      "path": "vendor/love-geometry/NOTICE",
+      "sha256": "e21af81afb6cf68012d2065e3d99e0b607f7d0be9fdfb2d899fc7701c893b384"
+    },
+    {
+      "path": "vendor/love-geometry/README.md",
+      "sha256": "77783e0ec949c84828fa5a2294c893e817e7899899f9a07daa90362e307c0e18"
+    },
+    {
+      "path": "vendor/love-geometry/schema/agenttool-love-geometry-v0.1.schema.json",
+      "sha256": "525a512bae74d7a7eb11df544765e8bd4ff48f2ddbfb8270c21c68cebcc22e6c"
+    },
+    {
+      "path": "vendor/love-geometry/vectors/agenttool-love-geometry-v0.1.json",
+      "sha256": "f6ec67f913382d9cb71ffe2d3c07bda0c3ada6102b518cf7dbe9c27dffcdcf20"
+    },
+    {
+      "path": "vendor/love-geometry/kingdom.extension.json",
+      "sha256": "31109d74693cde59b3899ca80b623be1510b77263dc0188d6692a7fafd6a2bfe"
+    }
+  ],
+  "verification": {
+    "acquisition": "npm SHA512 integrity and independently pinned tarball SHA256 verified before copying allowlisted regular files. Original package bytes preserved.",
+    "build": "Archive SHA512/SHA256 and all vendored file SHA256 pins checked before Node imports the module; official packed vector verified on every build and check.",
+    "limitations": "Integrity binds bytes; it does not authenticate a subject or prove report truth, authority, package safety, or publisher identity.",
+    "official_vector": {
+      "path": "vendor/love-geometry/vectors/agenttool-love-geometry-v0.1.json",
+      "geometry_id": "sha256:76db5a4de56a1e60fe97bcd1a96854f97f821479de3d5de10d323fe04babb8b3",
+      "canonical_json_sha256": "sha256:30130226a4a53bbcb3d3043ec58d7b234bd23b69e22bcdf81dcaa098f82845b4"
+    }
+  },
+  "execution": "build-time-only",
+  "browser_executes_core": false,
+  "browser_role": "The browser displays prevalidated build-time fixtures. The original core imports node:crypto and node:util/types; it is not executed, emulated, or bundled into this browser page.",
+  "build_command": "node scripts/build.mjs",
+  "check_command": "node scripts/build.mjs --check",
+  "build_network": false,
+  "npm_lifecycle_scripts_executed": false,
+  "scenarios_sha256": "61c8f9f01552308695ae60f1594b897f5bfd4984cb30f784d0c7d1f4501fab3d",
+  "synthetic_inputs": {
+    "encoding": "UTF-8; sha256Id from the pinned upstream core hashes these exact public strings without a trailing newline.",
+    "subject_tokens": [
+      {
+        "label": "Visitor",
+        "token": "love-understanding.examples/1:subject:Visitor",
+        "ref": "sha256:e5d9b4e151252bec57a98923bb14878244b6c35bfba04e949e2387374843b675"
+      },
+      {
+        "label": "Host",
+        "token": "love-understanding.examples/1:subject:Host",
+        "ref": "sha256:84e35186366e9b8aefc7586dcfbe8e49060af5b3b79903cfe6833ce70f22c916"
+      },
+      {
+        "label": "Maker",
+        "token": "love-understanding.examples/1:subject:Maker",
+        "ref": "sha256:4afae500299abef4800f4d9d8e0a84d3c903de50026f9ec7915abd19c9351b2b"
+      },
+      {
+        "label": "Witness",
+        "token": "love-understanding.examples/1:subject:Witness",
+        "ref": "sha256:eb95c198718b262b917a5f0936246bc829b5fa801d7adc239eaa455f61fbb285"
+      },
+      {
+        "label": "Neighbour",
+        "token": "love-understanding.examples/1:subject:Neighbour",
+        "ref": "sha256:0bbadc14d8b150f822ad83ac9e80ae14b94dc8ba5638c6fe1814fdd42e6b5d42"
+      },
+      {
+        "label": "Quiet seat",
+        "token": "love-understanding.examples/1:subject:Quiet seat",
+        "ref": "sha256:e49cdbfcacd2b787f4cba8b75849c1717bc4d41d3e5443a661f42edd2e4bfe97"
+      }
+    ],
+    "scope_tokens": [
+      {
+        "id": "welcome",
+        "token": "love-understanding.examples/1:scope:welcome",
+        "ref": "sha256:acb2b65cad98d0008d555d1e8952ac3da5bb685627a7eab46f50b88afb4e11e6"
+      },
+      {
+        "id": "divergence",
+        "token": "love-understanding.examples/1:scope:divergence",
+        "ref": "sha256:239362e5c1f2c243e5063ab6f2c13612d1c89b6d33e7a06afdc2aa6ef6f8c6a0"
+      },
+      {
+        "id": "rest",
+        "token": "love-understanding.examples/1:scope:rest",
+        "ref": "sha256:6c671a61cc0eba0812c057524d2f86568f05ee114dae3afaffb00eebbb0f6ff3"
+      },
+      {
+        "id": "quiet",
+        "token": "love-understanding.examples/1:scope:quiet",
+        "ref": "sha256:f4d9bdfd4f65aa1376a769a7c31970cc39296cb47af82721f0133af237529d43"
+      },
+      {
+        "id": "empty",
+        "token": "love-understanding.examples/1:scope:empty",
+        "ref": "sha256:d26b59a6ceffa2d49fb799174fda1950461f199504bf95d0b964e776a08fd1f9"
+      }
+    ],
+    "basis_refs": "Empty in every scenario: no evidence or private input is claimed.",
+    "privacy": "Entirely synthetic, openly documented tokens. Hashing these guessable public labels provides no anonymity, privacy, identity, or unlinkability claim."
+  },
+  "interpretation": [
+    "Directed caller-attributed, unverified reports—not rankings, emotions, consent, authority, or relationship truth.",
+    "Canonical ordering is serialization, not rank. Screen positions are layout only.",
+    "No reverse or transitive relationship is inferred; independent reverse reports may differ.",
+    "Rest, quiet, refusal, departure, and empty fields are welcome without penalty or automatic triggers.",
+    "Reading input never authorises action. No credentials, private data, agent identity, or autonomous hooks are used."
+  ],
+  "licensing": {
+    "spdx": "Apache-2.0",
+    "attribution": "AgentTool Love Geometry — Copyright 2026 AgentTool contributors. Vendored upstream files are unmodified.",
+    "source_repository": "https://github.com/cambridgetcg/agenttool/tree/main/packages/love-geometry",
+    "license_path": "vendor/love-geometry/LICENSE",
+    "notice_path": "vendor/love-geometry/NOTICE",
+    "license_text": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor has\n      been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright 2026 AgentTool contributors\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n",
+    "notice_text": "AgentTool Love Geometry\nCopyright 2026 AgentTool contributors\n\nThis product includes original, unofficial software project language inspired\nat a high level by geometric and relational design metaphors. It contains no\nHunter x Hunter story text, artwork, character likenesses, logos, or named\nfictional abilities.\n\nThe XENIA Rights of Beings baseline is referenced for interoperability and\norientation. XENIA is a separate project; no adoption, endorsement, authority,\nor conformance is implied.\n"
+  }
+}

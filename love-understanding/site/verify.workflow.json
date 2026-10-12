@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "name": "Verify love and understanding",
+  "goal": "Check the pinned geometry fixtures and finite teaching model without network calls or edits.",
+  "tasks": [
+    {
+      "id": "verify",
+      "harness": "command",
+      "argv": [
+        "node",
+        "scripts/verify.mjs"
+      ],
+      "workspace": "read-only",
+      "timeout_seconds": 30
+    }
+  ]
+}

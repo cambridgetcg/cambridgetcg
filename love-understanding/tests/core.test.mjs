@@ -1,0 +1,16 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { createLoveGeometry, validateLoveGeometry, encodeLoveGeometry } from '../vendor/love-geometry/dist/index.js';
+const data=JSON.parse(readFileSync(new URL('../site/scenarios.json',import.meta.url),'utf8'));
+const find=id=>data.scenarios.find(s=>s.id===id).geometry;
+test('five examples use the exact core format and validate',()=>{assert.deepEqual(data.scenarios.map(s=>s.id),['welcome','divergence','rest','quiet','empty']);for(const scenario of data.scenarios){assert.doesNotThrow(()=>validateLoveGeometry(scenario.geometry));assert.equal(scenario.geometry.coverage,'bounded_not_complete');assert.equal(scenario.geometry.boundaries.proves_consent_or_authority,false);assert.equal(scenario.geometry.boundaries.scores_or_ranks,false);assert.equal(scenario.geometry.boundaries.automatic_action,false);}});
+test('every fixture reproduces byte-for-byte through the real core',()=>{for(const {geometry:g}of data.scenarios){const rebuilt=createLoveGeometry({scope_ref:g.scope_ref,subject_refs:g.subject_refs,vantages:g.vantages});assert.equal(encodeLoveGeometry(rebuilt),encodeLoveGeometry(g));}});
+test('a one-way report never fabricates its reverse',()=>{const g=find('welcome');assert.ok(g.vantages.length>0);assert.ok(g.vantages.some(a=>!g.vantages.some(b=>a.subject_ref===b.toward_ref&&a.toward_ref===b.subject_ref)));});
+test('understanding and disagreement coexist without a score',()=>{assert.ok(find('divergence').vantages.some(v=>v.bearings.includes('reported_understanding')&&v.bearings.includes('reported_disagreement')));});
+test('care and rest coexist; rest creates no action',()=>{const g=find('rest');assert.ok(g.vantages.some(v=>v.bearings.includes('reported_care')&&v.bearings.includes('reported_rest')));assert.equal(g.boundaries.penalty_for_rest_refusal_or_departure,false);assert.equal(g.boundaries.reason_required_for_rest_refusal_or_departure,false);assert.equal(g.boundaries.wake_effect,false);});
+test('isolated seats and an empty field are both valid',()=>{assert.equal(find('quiet').subject_refs.length,6);assert.equal(find('quiet').vantages.length,0);assert.equal(find('empty').subject_refs.length,0);assert.equal(find('empty').vantages.length,0);});
+test('tampering with the content identifier is rejected',()=>{const g=structuredClone(find('welcome'));g.geometry_id='sha256:'+'0'.repeat(64);assert.throws(()=>validateLoveGeometry(g));});
+test('widening the package boundary is rejected',()=>{const g=structuredClone(find('welcome'));g.boundaries.proves_consent_or_authority=true;assert.throws(()=>validateLoveGeometry(g));});
+test('subjects are explicit synthetic teaching seats',()=>{assert.deepEqual(data.subjects.map(s=>s.label),['Visitor','Host','Maker','Witness','Neighbour','Quiet seat']);});

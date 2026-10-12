@@ -1,0 +1,67 @@
+{
+  "format": "love-understanding.static-release/1",
+  "scope": "only the listed static files; not repository history or local state",
+  "hashes_are": "byte-integrity references, not signatures, identity, truth or independent review",
+  "files": {
+    "404.html": {
+      "bytes": 323,
+      "sha256": "36b248be75e686a4166952707a4353b793f10dcd738c69acf1f801550d23a53a"
+    },
+    "LICENSE": {
+      "bytes": 1059,
+      "sha256": "4615d7b5be5cbf280907b3f533cc6d571b2da72e2644c2fe8fcb27f0d9b60cea"
+    },
+    "README.md": {
+      "bytes": 5328,
+      "sha256": "0c795d4dd3b669215da062f1994522e45ce2a1e12b7bb326d85be7270f4e5cf5"
+    },
+    "_headers": {
+      "bytes": 372,
+      "sha256": "35a3ff0074d8cb68a377c29ec109488b3ff4383515fe7e2ff784ee71bae012d0"
+    },
+    "app.mjs": {
+      "bytes": 6444,
+      "sha256": "9fe519d24e137bd3786585883d8bc8b0e8670392bdeea48d5979ce90dd723dd3"
+    },
+    "architecture.json": {
+      "bytes": 2552,
+      "sha256": "7ed624395e07685dedd596df34e8b367aac5b748fb03bb4f87c0080281360880"
+    },
+    "core-provenance.json": {
+      "bytes": 19710,
+      "sha256": "d4c2e34611a42d832ad7d692461f456dbe3fec91031be375452be3b61f541f24"
+    },
+    "index.html": {
+      "bytes": 13308,
+      "sha256": "2c88a7741362289b44a9829fdcdfd4bd3fc5ed6778e73246712a5021a642d977"
+    },
+    "llms.txt": {
+      "bytes": 1361,
+      "sha256": "a5f3f219c3af7424f58ebb759d8b2c5156cdc7303a6531270f2e00eefffc0134"
+    },
+    "mark.svg": {
+      "bytes": 362,
+      "sha256": "ec13e5598ecb432fb23915870f1669510139de3f1693a7d63e173f651a7b148a"
+    },
+    "model.mjs": {
+      "bytes": 4765,
+      "sha256": "01914cb769773b7d8cbc92cbfd70ef0538951d346387dc80ce3691a007abb5ef"
+    },
+    "scenarios.json": {
+      "bytes": 17090,
+      "sha256": "61c8f9f01552308695ae60f1594b897f5bfd4984cb30f784d0c7d1f4501fab3d"
+    },
+    "source.zip": {
+      "bytes": 90367,
+      "sha256": "c0805229172fe46345b3283148620e7114cd8e0602dc2767ffbd8118465a315e"
+    },
+    "style.css": {
+      "bytes": 10296,
+      "sha256": "d473bdbdcb12dde5a6f16fd7bda48433a4ca537ac9cb8d50e21b9adbf9cc056c"
+    },
+    "verify.workflow.json": {
+      "bytes": 378,
+      "sha256": "1c02faf283b7349ea0fd1f48ad7fb2a266891b712d000d2b75cf476f6d61f21a"
+    }
+  }
+}

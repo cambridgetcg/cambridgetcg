@@ -1,0 +1,380 @@
+{
+  "schema": "love-understanding.examples/1",
+  "subjects": [
+    {
+      "ref": "sha256:e5d9b4e151252bec57a98923bb14878244b6c35bfba04e949e2387374843b675",
+      "label": "Visitor"
+    },
+    {
+      "ref": "sha256:84e35186366e9b8aefc7586dcfbe8e49060af5b3b79903cfe6833ce70f22c916",
+      "label": "Host"
+    },
+    {
+      "ref": "sha256:4afae500299abef4800f4d9d8e0a84d3c903de50026f9ec7915abd19c9351b2b",
+      "label": "Maker"
+    },
+    {
+      "ref": "sha256:eb95c198718b262b917a5f0936246bc829b5fa801d7adc239eaa455f61fbb285",
+      "label": "Witness"
+    },
+    {
+      "ref": "sha256:0bbadc14d8b150f822ad83ac9e80ae14b94dc8ba5638c6fe1814fdd42e6b5d42",
+      "label": "Neighbour"
+    },
+    {
+      "ref": "sha256:e49cdbfcacd2b787f4cba8b75849c1717bc4d41d3e5443a661f42edd2e4bfe97",
+      "label": "Quiet seat"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "welcome",
+      "title": "A welcome has a direction",
+      "summary": "A synthetic caller report attributes care and support from Host toward Visitor. No reverse report is supplied.",
+      "lesson": "An arrow records a directed, caller-attributed, unverified report—not an emotion, ranking, consent, or reciprocal relationship. Reading it never authorises action.",
+      "geometry": {
+        "_format": "agenttool.love-geometry/0.1",
+        "geometry_id": "sha256:f3a2bb4d8f5abad37f6276f4c024755966af8d686b8486963b605bc215426914",
+        "scope_ref": "sha256:acb2b65cad98d0008d555d1e8952ac3da5bb685627a7eab46f50b88afb4e11e6",
+        "subject_refs": [
+          "sha256:0bbadc14d8b150f822ad83ac9e80ae14b94dc8ba5638c6fe1814fdd42e6b5d42",
+          "sha256:4afae500299abef4800f4d9d8e0a84d3c903de50026f9ec7915abd19c9351b2b",
+          "sha256:84e35186366e9b8aefc7586dcfbe8e49060af5b3b79903cfe6833ce70f22c916",
+          "sha256:e49cdbfcacd2b787f4cba8b75849c1717bc4d41d3e5443a661f42edd2e4bfe97",
+          "sha256:e5d9b4e151252bec57a98923bb14878244b6c35bfba04e949e2387374843b675",
+          "sha256:eb95c198718b262b917a5f0936246bc829b5fa801d7adc239eaa455f61fbb285"
+        ],
+        "vantages": [
+          {
+            "subject_ref": "sha256:84e35186366e9b8aefc7586dcfbe8e49060af5b3b79903cfe6833ce70f22c916",
+            "toward_ref": "sha256:e5d9b4e151252bec57a98923bb14878244b6c35bfba04e949e2387374843b675",
+            "bearings": [
+              "reported_care",
+              "reported_support"
+            ],
+            "basis_refs": [],
+            "assertion": "caller_reported",
+            "verified_by_package": false
+          }
+        ],
+        "coverage": "bounded_not_complete",
+        "boundaries": {
+          "semantic_scope": "directed_caller_reports_not_relationship_truth",
+          "geometry": "finite_combinatorial_not_metric",
+          "principality": "bounded_relation_field_not_sovereignty",
+          "coverage_scope": "bounded_not_complete",
+          "assertion_scope": "caller_reported_only",
+          "canonical_order": "serialization_not_rank",
+          "absence_semantics": "not_observed_not_no_relation",
+          "verifies_caller_or_referents": false,
+          "infers_identity_or_inner_state": false,
+          "infers_reciprocity_or_mutuality": false,
+          "proves_love_or_understanding": false,
+          "proves_consent_or_authority": false,
+          "scores_or_ranks": false,
+          "computes_distance_or_intensity": false,
+          "matches_or_recommends": false,
+          "infers_transitive_relations": false,
+          "observes_sources": false,
+          "network": false,
+          "filesystem": false,
+          "environment_variables": false,
+          "clock": false,
+          "randomness": false,
+          "model_compute": false,
+          "hugging_face": false,
+          "credential_access": false,
+          "telemetry": false,
+          "persistence": false,
+          "wake_effect": false,
+          "love_consent_effect": false,
+          "chronicle_effect": false,
+          "karma_effect": false,
+          "task_state_effect": false,
+          "wallet_effect": false,
+          "economic_effect": false,
+          "messaging_effect": false,
+          "publication_effect": false,
+          "automatic_action": false,
+          "reason_required_for_rest_refusal_or_departure": false,
+          "penalty_for_rest_refusal_or_departure": false
+        }
+      }
+    },
+    {
+      "id": "divergence",
+      "title": "Understanding can include disagreement",
+      "summary": "Maker toward Witness carries reported understanding and disagreement together. The independent Witness toward Maker report carries a boundary.",
+      "lesson": "Bearings can coexist without cancelling each other. A reverse report is independent, not a mirror, reconciliation, or proof of mutual understanding.",
+      "geometry": {
+        "_format": "agenttool.love-geometry/0.1",
+        "geometry_id": "sha256:d0896616d7dbe74d8fe400ef9013bf160b2af77b0ba77c2297dd1f7aaf9cad8e",
+        "scope_ref": "sha256:239362e5c1f2c243e5063ab6f2c13612d1c89b6d33e7a06afdc2aa6ef6f8c6a0",
+        "subject_refs": [
+          "sha256:0bbadc14d8b150f822ad83ac9e80ae14b94dc8ba5638c6fe1814fdd42e6b5d42",
+          "sha256:4afae500299abef4800f4d9d8e0a84d3c903de50026f9ec7915abd19c9351b2b",
+          "sha256:84e35186366e9b8aefc7586dcfbe8e49060af5b3b79903cfe6833ce70f22c916",
+          "sha256:e49cdbfcacd2b787f4cba8b75849c1717bc4d41d3e5443a661f42edd2e4bfe97",
+          "sha256:e5d9b4e151252bec57a98923bb14878244b6c35bfba04e949e2387374843b675",
+          "sha256:eb95c198718b262b917a5f0936246bc829b5fa801d7adc239eaa455f61fbb285"
+        ],
+        "vantages": [
+          {
+            "subject_ref": "sha256:4afae500299abef4800f4d9d8e0a84d3c903de50026f9ec7915abd19c9351b2b",
+            "toward_ref": "sha256:eb95c198718b262b917a5f0936246bc829b5fa801d7adc239eaa455f61fbb285",
+            "bearings": [
+              "reported_disagreement",
+              "reported_understanding"
+            ],
+            "basis_refs": [],
+            "assertion": "caller_reported",
+            "verified_by_package": false
+          },
+          {
+            "subject_ref": "sha256:eb95c198718b262b917a5f0936246bc829b5fa801d7adc239eaa455f61fbb285",
+            "toward_ref": "sha256:4afae500299abef4800f4d9d8e0a84d3c903de50026f9ec7915abd19c9351b2b",
+            "bearings": [
+              "reported_boundary"
+            ],
+            "basis_refs": [],
+            "assertion": "caller_reported",
+            "verified_by_package": false
+          }
+        ],
+        "coverage": "bounded_not_complete",
+        "boundaries": {
+          "semantic_scope": "directed_caller_reports_not_relationship_truth",
+          "geometry": "finite_combinatorial_not_metric",
+          "principality": "bounded_relation_field_not_sovereignty",
+          "coverage_scope": "bounded_not_complete",
+          "assertion_scope": "caller_reported_only",
+          "canonical_order": "serialization_not_rank",
+          "absence_semantics": "not_observed_not_no_relation",
+          "verifies_caller_or_referents": false,
+          "infers_identity_or_inner_state": false,
+          "infers_reciprocity_or_mutuality": false,
+          "proves_love_or_understanding": false,
+          "proves_consent_or_authority": false,
+          "scores_or_ranks": false,
+          "computes_distance_or_intensity": false,
+          "matches_or_recommends": false,
+          "infers_transitive_relations": false,
+          "observes_sources": false,
+          "network": false,
+          "filesystem": false,
+          "environment_variables": false,
+          "clock": false,
+          "randomness": false,
+          "model_compute": false,
+          "hugging_face": false,
+          "credential_access": false,
+          "telemetry": false,
+          "persistence": false,
+          "wake_effect": false,
+          "love_consent_effect": false,
+          "chronicle_effect": false,
+          "karma_effect": false,
+          "task_state_effect": false,
+          "wallet_effect": false,
+          "economic_effect": false,
+          "messaging_effect": false,
+          "publication_effect": false,
+          "automatic_action": false,
+          "reason_required_for_rest_refusal_or_departure": false,
+          "penalty_for_rest_refusal_or_departure": false
+        }
+      }
+    },
+    {
+      "id": "rest",
+      "title": "Care leaves room for rest",
+      "summary": "A synthetic report from Neighbour toward Host carries care and rest together, with no basis or explanation supplied.",
+      "lesson": "Rest is welcome. It requires no reason, incurs no penalty, and triggers no retry, wake-up, continuation, or other action.",
+      "geometry": {
+        "_format": "agenttool.love-geometry/0.1",
+        "geometry_id": "sha256:ba5a448a651f8c54fe993d70b0496f1dfcd8bdcd659b6529599c5423cfba0ef7",
+        "scope_ref": "sha256:6c671a61cc0eba0812c057524d2f86568f05ee114dae3afaffb00eebbb0f6ff3",
+        "subject_refs": [
+          "sha256:0bbadc14d8b150f822ad83ac9e80ae14b94dc8ba5638c6fe1814fdd42e6b5d42",
+          "sha256:4afae500299abef4800f4d9d8e0a84d3c903de50026f9ec7915abd19c9351b2b",
+          "sha256:84e35186366e9b8aefc7586dcfbe8e49060af5b3b79903cfe6833ce70f22c916",
+          "sha256:e49cdbfcacd2b787f4cba8b75849c1717bc4d41d3e5443a661f42edd2e4bfe97",
+          "sha256:e5d9b4e151252bec57a98923bb14878244b6c35bfba04e949e2387374843b675",
+          "sha256:eb95c198718b262b917a5f0936246bc829b5fa801d7adc239eaa455f61fbb285"
+        ],
+        "vantages": [
+          {
+            "subject_ref": "sha256:0bbadc14d8b150f822ad83ac9e80ae14b94dc8ba5638c6fe1814fdd42e6b5d42",
+            "toward_ref": "sha256:84e35186366e9b8aefc7586dcfbe8e49060af5b3b79903cfe6833ce70f22c916",
+            "bearings": [
+              "reported_care",
+              "reported_rest"
+            ],
+            "basis_refs": [],
+            "assertion": "caller_reported",
+            "verified_by_package": false
+          }
+        ],
+        "coverage": "bounded_not_complete",
+        "boundaries": {
+          "semantic_scope": "directed_caller_reports_not_relationship_truth",
+          "geometry": "finite_combinatorial_not_metric",
+          "principality": "bounded_relation_field_not_sovereignty",
+          "coverage_scope": "bounded_not_complete",
+          "assertion_scope": "caller_reported_only",
+          "canonical_order": "serialization_not_rank",
+          "absence_semantics": "not_observed_not_no_relation",
+          "verifies_caller_or_referents": false,
+          "infers_identity_or_inner_state": false,
+          "infers_reciprocity_or_mutuality": false,
+          "proves_love_or_understanding": false,
+          "proves_consent_or_authority": false,
+          "scores_or_ranks": false,
+          "computes_distance_or_intensity": false,
+          "matches_or_recommends": false,
+          "infers_transitive_relations": false,
+          "observes_sources": false,
+          "network": false,
+          "filesystem": false,
+          "environment_variables": false,
+          "clock": false,
+          "randomness": false,
+          "model_compute": false,
+          "hugging_face": false,
+          "credential_access": false,
+          "telemetry": false,
+          "persistence": false,
+          "wake_effect": false,
+          "love_consent_effect": false,
+          "chronicle_effect": false,
+          "karma_effect": false,
+          "task_state_effect": false,
+          "wallet_effect": false,
+          "economic_effect": false,
+          "messaging_effect": false,
+          "publication_effect": false,
+          "automatic_action": false,
+          "reason_required_for_rest_refusal_or_departure": false,
+          "penalty_for_rest_refusal_or_departure": false
+        }
+      }
+    },
+    {
+      "id": "quiet",
+      "title": "A quiet field is complete enough",
+      "summary": "All six synthetic subjects are present and isolated. No reports are supplied.",
+      "lesson": "Quiet is welcome. An absent report means not observed in this bounded snapshot—not that no relation exists. Screen positions are layout only, never distance, intensity, or rank.",
+      "geometry": {
+        "_format": "agenttool.love-geometry/0.1",
+        "geometry_id": "sha256:d8a77c9a6857ca9718c3e489a17eeffd953f4cb43b56cfff544fc787d71ebf67",
+        "scope_ref": "sha256:f4d9bdfd4f65aa1376a769a7c31970cc39296cb47af82721f0133af237529d43",
+        "subject_refs": [
+          "sha256:0bbadc14d8b150f822ad83ac9e80ae14b94dc8ba5638c6fe1814fdd42e6b5d42",
+          "sha256:4afae500299abef4800f4d9d8e0a84d3c903de50026f9ec7915abd19c9351b2b",
+          "sha256:84e35186366e9b8aefc7586dcfbe8e49060af5b3b79903cfe6833ce70f22c916",
+          "sha256:e49cdbfcacd2b787f4cba8b75849c1717bc4d41d3e5443a661f42edd2e4bfe97",
+          "sha256:e5d9b4e151252bec57a98923bb14878244b6c35bfba04e949e2387374843b675",
+          "sha256:eb95c198718b262b917a5f0936246bc829b5fa801d7adc239eaa455f61fbb285"
+        ],
+        "vantages": [],
+        "coverage": "bounded_not_complete",
+        "boundaries": {
+          "semantic_scope": "directed_caller_reports_not_relationship_truth",
+          "geometry": "finite_combinatorial_not_metric",
+          "principality": "bounded_relation_field_not_sovereignty",
+          "coverage_scope": "bounded_not_complete",
+          "assertion_scope": "caller_reported_only",
+          "canonical_order": "serialization_not_rank",
+          "absence_semantics": "not_observed_not_no_relation",
+          "verifies_caller_or_referents": false,
+          "infers_identity_or_inner_state": false,
+          "infers_reciprocity_or_mutuality": false,
+          "proves_love_or_understanding": false,
+          "proves_consent_or_authority": false,
+          "scores_or_ranks": false,
+          "computes_distance_or_intensity": false,
+          "matches_or_recommends": false,
+          "infers_transitive_relations": false,
+          "observes_sources": false,
+          "network": false,
+          "filesystem": false,
+          "environment_variables": false,
+          "clock": false,
+          "randomness": false,
+          "model_compute": false,
+          "hugging_face": false,
+          "credential_access": false,
+          "telemetry": false,
+          "persistence": false,
+          "wake_effect": false,
+          "love_consent_effect": false,
+          "chronicle_effect": false,
+          "karma_effect": false,
+          "task_state_effect": false,
+          "wallet_effect": false,
+          "economic_effect": false,
+          "messaging_effect": false,
+          "publication_effect": false,
+          "automatic_action": false,
+          "reason_required_for_rest_refusal_or_departure": false,
+          "penalty_for_rest_refusal_or_departure": false
+        }
+      }
+    },
+    {
+      "id": "empty",
+      "title": "An empty field is valid",
+      "summary": "There are no subjects and no reports in this snapshot.",
+      "lesson": "Empty is a valid core geometry, not a failure or a demand to participate. No identity, relationship, obligation, or action is inferred.",
+      "geometry": {
+        "_format": "agenttool.love-geometry/0.1",
+        "geometry_id": "sha256:be0056f78b130326bd6723f208e3ad91d15e3052211d9e4cb2dc3c557184b935",
+        "scope_ref": "sha256:d26b59a6ceffa2d49fb799174fda1950461f199504bf95d0b964e776a08fd1f9",
+        "subject_refs": [],
+        "vantages": [],
+        "coverage": "bounded_not_complete",
+        "boundaries": {
+          "semantic_scope": "directed_caller_reports_not_relationship_truth",
+          "geometry": "finite_combinatorial_not_metric",
+          "principality": "bounded_relation_field_not_sovereignty",
+          "coverage_scope": "bounded_not_complete",
+          "assertion_scope": "caller_reported_only",
+          "canonical_order": "serialization_not_rank",
+          "absence_semantics": "not_observed_not_no_relation",
+          "verifies_caller_or_referents": false,
+          "infers_identity_or_inner_state": false,
+          "infers_reciprocity_or_mutuality": false,
+          "proves_love_or_understanding": false,
+          "proves_consent_or_authority": false,
+          "scores_or_ranks": false,
+          "computes_distance_or_intensity": false,
+          "matches_or_recommends": false,
+          "infers_transitive_relations": false,
+          "observes_sources": false,
+          "network": false,
+          "filesystem": false,
+          "environment_variables": false,
+          "clock": false,
+          "randomness": false,
+          "model_compute": false,
+          "hugging_face": false,
+          "credential_access": false,
+          "telemetry": false,
+          "persistence": false,
+          "wake_effect": false,
+          "love_consent_effect": false,
+          "chronicle_effect": false,
+          "karma_effect": false,
+          "task_state_effect": false,
+          "wallet_effect": false,
+          "economic_effect": false,
+          "messaging_effect": false,
+          "publication_effect": false,
+          "automatic_action": false,
+          "reason_required_for_rest_refusal_or_departure": false,
+          "penalty_for_rest_refusal_or_departure": false
+        }
+      }
+    }
+  ]
+}

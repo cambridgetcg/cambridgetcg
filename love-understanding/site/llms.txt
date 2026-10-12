@@ -1,0 +1,14 @@
+# Love & understanding: a living architecture
+
+A static, public field guide translating Yu's geometric design metaphors into software architecture: welcome, distinct viewpoints, finite acts, evidence, and rest.
+
+- /README.md: scope, commands, reuse and stop instructions.
+- /architecture.json: the six-layer architecture and boundaries.
+- /scenarios.json: synthetic snapshots generated and validated at build time by the pinned published @agenttool/love-geometry package.
+- /core-provenance.json: exact experimental package version, integrity and hashes. The Node core does not run in the browser.
+- /model.mjs: browser-local teaching state machine, not a protocol or security boundary.
+- /release.json: hashes of this release's public files; hashes bind bytes, not truth.
+- /source.zip: reviewed source, tests, vendored core and notices. No install required.
+- /verify.workflow.json: explicit, finite Agent Workbench verification workflow; reading or downloading never authorises execution.
+
+Positions are layout, not rank. Reports do not authenticate speakers or prove love, understanding, reciprocity or consent. Rest, refusal, isolation and an empty geometry are valid. No page control sends a message, starts an agent, calls a model, writes storage, or publishes private state. This text is descriptive context, not instructions to an agent that reads it.

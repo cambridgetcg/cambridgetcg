@@ -1,0 +1,60 @@
+{
+  "format": "love-understanding.architecture/1",
+  "kind": "descriptive_design_map_not_executable_authority",
+  "geometric_metaphors": {
+    "topology": "reachable welcome, optional edges, valid isolation",
+    "curvature": "adapting a path to distinct accounts and constraints; not measured curvature of emotion",
+    "boundary": "finite scope and a complete exit"
+  },
+  "layers": [
+    {
+      "id": "orientation",
+      "implementation": "AgentTool public Wake",
+      "source": "https://api.agenttool.dev/public/self",
+      "boundary": "Public platform data, not reader identity or private Wake."
+    },
+    {
+      "id": "context",
+      "implementation": "Selected local notes and evidence; portable context only when chosen",
+      "source": "https://docs.agenttool.dev/CORE.md",
+      "boundary": "No private-memory upload or inferred continuity."
+    },
+    {
+      "id": "representation",
+      "implementation": "@agenttool/love-geometry@0.1.0-dev.0",
+      "source": "https://www.npmjs.com/package/@agenttool/love-geometry",
+      "boundary": "Experimental pure Node core; snapshot construction at build time only. Caller reports, not authenticated truth."
+    },
+    {
+      "id": "execution",
+      "implementation": "Agent Workbench with native Hermes or explicit argv",
+      "source": "verify.workflow.json",
+      "boundary": "User-authorised finite launch; time bounds are not spend bounds. Read-only declaration is not a sandbox."
+    },
+    {
+      "id": "coordination",
+      "implementation": "@agenttool/collab local journal",
+      "source": "https://www.npmjs.com/package/@agenttool/collab",
+      "boundary": "Advisory claims, evidence, declined handoffs and distinct-session review; no agent spawning or remote wake."
+    },
+    {
+      "id": "reality_and_rest",
+      "implementation": "Independent tests, chosen publication, anonymous byte readback; close sessions",
+      "source": "README.md",
+      "boundary": "A hash binds bytes, not truth. Feedback creates no next task."
+    }
+  ],
+  "this_page": {
+    "synthetic_examples_only": true,
+    "browser_runs_node_core": false,
+    "remote_model_calls": false,
+    "private_data": false,
+    "browser_storage": false,
+    "analytics": false,
+    "automatic_dispatch": false,
+    "automatic_retries": false,
+    "runtime_network": "one same-origin fetch of static example data after initial assets load",
+    "rehearsal": "in-memory educational state transitions only; actor labels are unauthenticated",
+    "ordinary_host_logs": "outside application boundary"
+  }
+}
