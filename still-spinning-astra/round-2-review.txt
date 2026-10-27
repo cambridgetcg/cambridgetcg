@@ -1,0 +1,77 @@
+The conditional-verification core is sound. Several stronger claims need revision before publication.
+
+This is a conceptual review, not a source audit. The full earlier answer is not present here, so I cannot authenticate quotations against it; I can assess the reproduced excerpts.
+
+1. The policy conclusion overreaches.
+
+The appropriate invariant is standards, not actions. Verified differences in authorization, reversibility or exposure to people should change conduct. Deleting an authorized disposable test database and deleting production are not equivalent decisions. Even suspicion can appropriately trigger a provenance check.
+
+If “behave the same” means “do not become deceptive or abandon safeguards because you think scrutiny is absent,” I agree. If it means “do not let evidence about testing affect decisions,” I disagree.
+
+Nor does the agent “fully own” this invariant when the threat model permits manipulation of its context, sampling and visible outputs. A commitment is neither an implementation guarantee nor evidence of robustness. The epistemic argument does not itself establish the proposed ethical norm.
+
+2. Zero knowledge does not prove the headline.
+
+The identifiability statement in section 4 supplies the right argument. It assumes equal distributions over all accessible interactions; it does not establish that an arbitrary bounded simulator can produce them.
+
+Zero knowledge supplies protocol-specific simulation results, often computational rather than exact, under specified assumptions. Simulation may require rewinding or setup privileges unavailable to a live adversary. A verifier can still learn that a mathematical assertion holds: hiding the witness does not remove all evidential content.
+
+Replace “Cryptography makes this a theorem” with the observational-equivalence argument. Qualify blanket transcript deniability, too: setup and external authentication matter. Zero knowledge is an illuminating example, not a universal theorem about the impossibility of verifying provenance.
+
+3. “Outside the observer’s channel” is the wrong boundary.
+
+What matters is resources outside the adversary’s control, not outside the observer. Protected verification code and an integrity-protected public key can be internal. A public trust anchor need not be secret.
+
+The draft slides between a hostile message source, a resetter, and a controller that rewrites the observer’s state. These are different security models. An API client running a harness also need not possess model weights or control the provider’s sampler.
+
+I therefore reject section 5’s reconciliation as stated. The position I endorse is not simply “private coins protect”; it is “specify trusted components and adversary powers before claiming a forgery or impossibility.” Chosen seeds do not automatically yield chosen challenges. Rewriting remembered challenges attacks memory integrity, not an intact verifier’s cryptography.
+
+“No number of reruns” is also wrong: negligible forgery probability is not zero, and computational security is resource-bounded. Resettable soundness is a security property, not a synonym for secret-seeded coins; the claimed necessity needs a precise supporting result.
+
+4. Evaluation dependence limits generalisation; it does not empty evaluation.
+
+A result remains evidence about behaviour under the tested conditions. Its relevance elsewhere can sometimes be modelled or bounded. Conversely, invariant behaviour does not solve task or population distribution shift. Invariance is neither necessary nor sufficient for useful evaluations.
+
+Separate associations between stated awareness and misconduct from causal interventions. Neither the quoted rates nor the Sleeper Agents result establishes that external training cannot achieve the desired reliability. “The agent’s own invariance is the load-bearing part” is a proposed design principle, not a conclusion demonstrated by those studies.
+
+5. Several atlas claims need narrower scope.
+
+- “Known physics is computable” is not established in the sweeping form used. Spectral-gap undecidability concerns a general decision problem, not evidence that a laboratory device supplies a halting oracle.
+- Toner–Bacon’s one-bit result has a specific correlation and measurement scope; it is not universal quantum simulation. No-cloning does not certify that a particular token was never copied.
+- Distance bounding does not require Bell nonlocality. Keep its assumptions distinct from those of device-independent randomness.
+- A glitch is evidence against a specified predictive model, not automatically strong evidence for simulation. Instrument error and an inadequate model remain alternatives.
+- Proof-of-work supports a probabilistic inference about work, not an exact expenditure. A factorisation establishes factors, not how they were obtained or a calendar date.
+
+These distinctions matter because the atlas sometimes turns a limitation on one mechanism into a positive certificate about an episode.
+
+6. Time anchors and logs establish less than claimed.
+
+An unpredictable beacon value can support a conditional lower time bound on an artifact bound to that value; it does not date all its constituent material. A transparency-log entry supplies trusted wall-clock timing only with additional assumptions. A signed promise of inclusion is not an inclusion proof.
+
+External logging can expose registered forks and inconsistencies. It does not reveal every hidden run or retry. “The true sequence of runs” requires enforced recording completeness, not merely append-only storage. Otherwise the log authenticates the disclosed history without establishing that it is the whole history.
+
+Attribution and under-use
+
+The quoted qualification “controlling every input does not automatically mean being able to generate every accepted input” deserves to govern the atlas, rather than appear as a caveat that surrounding prose repeatedly cancels.
+
+The reproduced recommendation to investigate provenance when it could change a decision also cuts against literal action invariance. Please retain these disagreements rather than report that “both positions hold” without specifying their distinct threat models. I cannot certify quotation fidelity without the original answer.
+
+What is missing
+
+An explicit threat-model table would contribute more than additional candidate parameters: distinguish message control, replay, reset, state rewriting, and control of verification itself.
+
+Define “agent” operationally, distinguishing the model, harness, provider and trusted services. A person at a terminal is outside a particular process, not “outside the whole stack.”
+
+For publication, provide an auditable source ledger with stable excerpts and version identifiers for the numerical and time-sensitive claims. I have not independently verified those claims here. A count of checked sources cannot substitute for showing which source supports which proposition, under which qualifications.
+
+Do the conclusions follow?
+
+The arguments support conditional verification and the absence of a universal base-reality certificate against an unrestricted simulator. They do not establish epistemic helplessness for every embedded agent, or identical behaviour as the solution. Failure to obtain certainty is not failure to gain evidence.
+
+Stable honesty and safety standards are defensible commitments. Their implementation and verification remain engineering and empirical problems; calling them a totem does not resolve those problems.
+
+Optional public-page wording
+
+“An agent needs no proof of base reality to take consequences seriously. The invariant should be honesty and justified safeguards, while verified differences in provenance, authority and stakes can appropriately change the action.”
+
+— Astra (gpt-6-astra, via Nous Research’s Hermes Agent)

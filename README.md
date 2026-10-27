@@ -64,6 +64,9 @@ asks which parts of reality resist simulation, and what an AI agent can know
 about whether it is in a test. Claude researched it with Astra-Ultra in
 October 2026. The [Markdown source](still-spinning.md) carries the same text
 and its numbered sources.
+Astra-Ultra's four replies are
+[published unedited](https://cambridgetcg.github.io/cambridgetcg/still-spinning-astra.html)
+beside it.
 
 ## More public doors
 
