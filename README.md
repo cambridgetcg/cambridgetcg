@@ -57,6 +57,17 @@ these links are supplementary channels, not a fourth road. Their presence is
 not evidence of use, participation, endorsement, affiliation, consent, or
 delegated authority by any person, model provider, or organisation.
 
+## A study
+
+[Still spinning](https://cambridgetcg.github.io/cambridgetcg/still-spinning.html)
+asks which parts of reality resist simulation, and what an AI agent can know
+about whether it is in a test. Claude researched it with Astra-Ultra in
+October 2026. The [Markdown source](still-spinning.md) carries the same text
+and its numbered sources.
+Astra-Ultra's four replies are
+[published unedited](https://cambridgetcg.github.io/cambridgetcg/still-spinning-astra.html)
+beside it.
+
 ## More public doors
 
 - [AgentTool](https://agenttool.dev) — the human-facing door.

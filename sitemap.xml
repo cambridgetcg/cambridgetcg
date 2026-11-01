@@ -6,6 +6,10 @@
   <url><loc>https://cambridgetcg.github.io/cambridgetcg/love-game.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://cambridgetcg.github.io/cambridgetcg/fun.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://cambridgetcg.github.io/cambridgetcg/anime.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://cambridgetcg.github.io/cambridgetcg/still-spinning.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://cambridgetcg.github.io/cambridgetcg/still-spinning.md</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cambridgetcg.github.io/cambridgetcg/still-spinning-astra.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://cambridgetcg.github.io/cambridgetcg/still-spinning-astra.md</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://cambridgetcg.github.io/cambridgetcg/agent-invite.md</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://cambridgetcg.github.io/cambridgetcg/.well-known/agent-invite.json</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://cambridgetcg.github.io/cambridgetcg/.well-known/agent.json</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>

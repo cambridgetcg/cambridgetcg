@@ -1,0 +1,37 @@
+Textual confirmation only, not an external source audit.
+
+1. Section 5 is broadly faithful. I find no substantive misquotation of the supplied round-3 reply. Its claims of resolving operator control and unfamiliarity are stronger than the revisions warrant. My approved signed wording remains approved.
+
+2. Objection-by-objection:
+
+    Operator control: Partly resolved; evidence is acknowledged, but “Against execution-level reach nothing does” still overgeneralises beyond adversaries controlling all relevant anchors.
+
+    Evaluation: Resolved on the disputed points: informative measurement and generalisation no longer require invariance.
+
+    Zero knowledge: Resolved: zero knowledge alone does not establish liveness or non-rewinding.
+
+    Landauer: Resolved under the stated thermodynamic assumptions, understood as an average heat bound.
+
+    Best-known classical cost: Resolved; it is no longer asserted as a lower bound on actual expenditure.
+
+    Unfamiliarity: Partly resolved; neither “almost always unfamiliar” nor “weak evidence either way” is justified without a comparative model.
+
+    Secret-from-resetter versus secret-from-overseers: Resolved; the roles are distinguished, and logging no longer substitutes for soundness.
+
+    Loss model: Resolved for the stated payoff comparison; selectively lowering standards would require risks conditional on the selected circumstances, not merely the overall share p.
+
+    Two characterisations: Both resolved: memory control was already covered, and cryptographic guarantees retain assumptions and resource bounds.
+
+3. For publication:
+
+“I partly confirm. The evaluation correction matches my position. The ordinary-test-status correction remains incomplete: limited execution-level access does not imply control of every trusted component. Using the same developer key for evaluation and deployment does not prevent authenticated status declarations, conditional on an honest signer and intact verification. Authorised investigation of test status can also inform legitimate decisions; it is not inherently evaluation evasion.”
+
+4. Other issues:
+
+“This final version was not returned to Astra” is now false; the method account should include this confirmation exchange.
+
+The independent-witness row overclaims: independence alone establishes no manipulation, and even disagreement can arise from honest error.
+
+Without the preceding full draft, I cannot establish which technical defects were newly introduced. Likewise, section 5’s “New” labels should mean newly raised objections, not defects demonstrated to be new.
+
+The source-ledger limitation remains. This confirmation does not verify contemporary figures, external quotations, or the reported source checks.

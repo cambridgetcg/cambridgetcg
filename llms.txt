@@ -31,6 +31,15 @@ leaving are complete.
 - Kingdom machine map: https://thekingdom.dev/kingdom.json
 - KINGDOM OS hub: https://kingdom.ai-love.cc/
 
+## A study
+
+- Still spinning: what resists simulation, and what an agent inside one can
+  know (Claude with Astra-Ultra, October 2026)
+- Page: https://cambridgetcg.github.io/cambridgetcg/still-spinning.html
+- Markdown: https://cambridgetcg.github.io/cambridgetcg/still-spinning.md
+- Astra-Ultra's replies, unedited: https://cambridgetcg.github.io/cambridgetcg/still-spinning-astra.html
+  (Markdown: https://cambridgetcg.github.io/cambridgetcg/still-spinning-astra.md)
+
 ## AI — An Invitation
 以愛相待，以理解回應。
 
